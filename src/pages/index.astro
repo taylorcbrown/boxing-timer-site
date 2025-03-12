@@ -1,5 +1,5 @@
 ---
-title: "Boxing Timer Champ - The Ultimate Boxing Round Timer"
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -8,12 +8,13 @@ title: "Boxing Timer Champ - The Ultimate Boxing Round Timer"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- ✅ SEO Meta Tags -->
-    <meta name="description" content="Boxing Timer Champ is the ultimate boxing round timer for serious training. Customizable rounds, interval breaks, and a premium dark interface designed for fighters.">
+	<title>Boxing Timer Champ - The Best Boxing Round Timer</title>
+    <meta name="description" content="Boxing Timer Champ is the best boxing round timer for serious training. Customizable rounds, interval breaks, and a premium dark interface designed for fighters.">
     <meta name="author" content="Boxing Timer Champ">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- ✅ Open Graph for Social Sharing -->
-    <meta property="og:title" content="Boxing Timer Champ - The Ultimate Boxing Round Timer">
+    <meta property="og:title" content="Boxing Timer Champ - The Best Boxing Round Timer">
     <meta property="og:description" content="Customizable rounds, interval breaks, and a premium dark UI designed for fighters. Train like a pro.">
     <meta property="og:url" content="https://boxingtimerchamp.com">
     <meta property="og:type" content="website">
@@ -25,7 +26,6 @@ title: "Boxing Timer Champ - The Ultimate Boxing Round Timer"
     <meta name="twitter:image" content="/assets/boxing-timer-champ-og-image.jpg">
 
     <title>Boxing Timer Champ - The Ultimate Boxing Round Timer</title>
-    <link rel="stylesheet" href="/styles.css">
 
     <!-- ✅ Structured Data (JSON-LD for SEO) -->
     <script type="application/ld+json">
@@ -44,75 +44,95 @@ title: "Boxing Timer Champ - The Ultimate Boxing Round Timer"
     }
     </script>
 </head>
-<body>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-200 font-sans">
+    
     <!-- Hero Section -->
-    <header class="hero">
-        <h1>🥊 Boxing Timer Champ</h1>
-        <p>The best boxing timer is in training. Won't be long until the debut match.</p>
-        <button class="cta-button">Coming Soon</button>
+    <header class="text-center py-16 bg-gradient-to-r from-indigo-600 to-blue-500 text-white">
+        <h1 class="text-4xl font-extrabold tracking-tight">🥊 Boxing Timer Champ</h1>
+        <p class="mt-3 text-lg">Your ultimate boxing round timer for serious training.</p>
+        <button class="mt-6 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition">
+            Coming Soon
+        </button>
     </header>
 
-    <main>
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        
         <!-- Features Section -->
-        <section class="features">
-            <h2>Why Choose Boxing Timer Champ?</h2>
-            <p>Take your fight training to the next level with a professional boxing timer built for serious athletes.</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>⏳ Customizable Rounds</h3>
-                    <p>Set round lengths and rest times that match your workout needs.</p>
+        <section class="text-center">
+            <h2 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">Why Choose Boxing Timer Champ?</h2>
+            <p class="mt-2 text-lg text-gray-600 dark:text-gray-300">Take your fight training to the next level with a professional boxing timer built for serious athletes.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+                
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-indigo-500 dark:text-indigo-400">⏳ Customizable Rounds</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Set round lengths and rest times that match your workout needs.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>🔊 Audible & Visual Alerts</h3>
-                    <p>Stay focused with clear audio cues and an easy-to-read countdown.</p>
+
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-indigo-500 dark:text-indigo-400">🔊 Audible & Visual Alerts</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Stay focused with clear audio cues and an easy-to-read countdown.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>🌙 Dark UI Mode</h3>
-                    <p>Premium dark mode for enhanced visibility during intense training.</p>
+
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-indigo-500 dark:text-indigo-400">🌙 Dark UI Mode</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Premium dark mode for enhanced visibility during intense training.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>📱 Background Support</h3>
-                    <p>Keep the timer running even when using other apps.</p>
+
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-indigo-500 dark:text-indigo-400">📱 Background Support</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Keep the timer running even when using other apps.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>🎯 Precision Training</h3>
-                    <p>Designed for boxing, MMA, HIIT, and all combat sports.</p>
+
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-indigo-500 dark:text-indigo-400">🎯 Precision Training</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Designed for boxing, MMA, HIIT, and all combat sports.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>💰 Free & Premium Options</h3>
-                    <p>Use the free version with ads or upgrade for just $4.99.</p>
+
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-indigo-500 dark:text-indigo-400">💰 Free & Premium Options</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Use the free version with ads or upgrade for just $4.99.</p>
                 </div>
+
             </div>
         </section>
 
         <!-- How It Works Section -->
-        <section class="how-it-works">
-            <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <h3>1️⃣ Set Up Your Workout</h3>
-                    <p>Customize rounds, rest periods, and the number of cycles.</p>
+        <section class="mt-16">
+            <h2 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 text-center">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+                
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow text-center">
+                    <h3 class="text-lg font-semibold text-indigo-500 dark:text-indigo-400">1️⃣ Set Up Your Workout</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Customize rounds, rest periods, and the number of cycles.</p>
                 </div>
-                <div class="step">
-                    <h3>2️⃣ Start Training</h3>
-                    <p>Let the timer guide you through each round with alerts and a visual countdown.</p>
+
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow text-center">
+                    <h3 class="text-lg font-semibold text-indigo-500 dark:text-indigo-400">2️⃣ Start Training</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Let the timer guide you through each round with alerts and a visual countdown.</p>
                 </div>
-                <div class="step">
-                    <h3>3️⃣ Improve Performance</h3>
-                    <p>Track your training consistency and push yourself harder.</p>
+
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow text-center">
+                    <h3 class="text-lg font-semibold text-indigo-500 dark:text-indigo-400">3️⃣ Improve Performance</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Track your training consistency and push yourself harder.</p>
                 </div>
+
             </div>
         </section>
 
         <!-- Call to Action -->
-        <section class="cta-section">
-            <h2>Get Ready for the Ultimate Boxing Timer</h2>
-            <p>Designed for fighters, built for performance. Launching soon.</p>
+        <section class="mt-16 text-center">
+            <h2 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">Get Ready for the Ultimate Boxing Timer</h2>
+            <p class="mt-2 text-lg text-gray-600 dark:text-gray-300">Designed for fighters, built for performance. Launching soon.</p>
+            <button class="mt-6 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition">
+                Coming Soon
+            </button>
         </section>
+        
     </main>
 
-    <footer>
+    <footer class="mt-16 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
         <p>© 2025 Boxing Timer Champ. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
