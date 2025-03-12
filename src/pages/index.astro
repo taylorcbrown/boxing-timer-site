@@ -1,11 +1,118 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+title: "Boxing Timer Champ - The Ultimate Boxing Round Timer"
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ✅ SEO Meta Tags -->
+    <meta name="description" content="Boxing Timer Champ is the ultimate boxing round timer for serious training. Customizable rounds, interval breaks, and a premium dark interface designed for fighters.">
+    <meta name="author" content="Boxing Timer Champ">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- ✅ Open Graph for Social Sharing -->
+    <meta property="og:title" content="Boxing Timer Champ - The Ultimate Boxing Round Timer">
+    <meta property="og:description" content="Customizable rounds, interval breaks, and a premium dark UI designed for fighters. Train like a pro.">
+    <meta property="og:url" content="https://boxingtimerchamp.com">
+    <meta property="og:type" content="website">
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Boxing Timer Champ - The Best Boxing Timer App">
+    <meta name="twitter:description" content="Customizable rounds, interval breaks, and a premium dark UI designed for fighters.">
+    <meta name="twitter:image" content="/assets/boxing-timer-champ-og-image.jpg">
+
+    <title>Boxing Timer Champ - The Ultimate Boxing Round Timer</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- ✅ Structured Data (JSON-LD for SEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Boxing Timer Champ",
+        "description": "A professional boxing round timer with customizable rounds, rest intervals, a premium dark UI, and background operation support.",
+        "operatingSystem": "iOS",
+        "applicationCategory": "SportsApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "4.99",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>🥊 Boxing Timer Champ</h1>
+        <p>The best boxing timer is in training. Won't be long until the debut match.</p>
+        <button class="cta-button">Coming Soon</button>
+    </header>
+
+    <main>
+        <!-- Features Section -->
+        <section class="features">
+            <h2>Why Choose Boxing Timer Champ?</h2>
+            <p>Take your fight training to the next level with a professional boxing timer built for serious athletes.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>⏳ Customizable Rounds</h3>
+                    <p>Set round lengths and rest times that match your workout needs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔊 Audible & Visual Alerts</h3>
+                    <p>Stay focused with clear audio cues and an easy-to-read countdown.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌙 Dark UI Mode</h3>
+                    <p>Premium dark mode for enhanced visibility during intense training.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Background Support</h3>
+                    <p>Keep the timer running even when using other apps.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 Precision Training</h3>
+                    <p>Designed for boxing, MMA, HIIT, and all combat sports.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💰 Free & Premium Options</h3>
+                    <p>Use the free version with ads or upgrade for just $4.99.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>1️⃣ Set Up Your Workout</h3>
+                    <p>Customize rounds, rest periods, and the number of cycles.</p>
+                </div>
+                <div class="step">
+                    <h3>2️⃣ Start Training</h3>
+                    <p>Let the timer guide you through each round with alerts and a visual countdown.</p>
+                </div>
+                <div class="step">
+                    <h3>3️⃣ Improve Performance</h3>
+                    <p>Track your training consistency and push yourself harder.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <h2>Get Ready for the Ultimate Boxing Timer</h2>
+            <p>Designed for fighters, built for performance. Launching soon.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Boxing Timer Champ. All rights reserved.</p>
+    </footer>
+</body>
+</html>
