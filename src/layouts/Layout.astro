@@ -10,6 +10,13 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>{title || "Boxing Timer Champ"}</title>
+		<!-- Start cookieyes banner -->
+		<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/746be0fcd3798bc5bf52a785/script.js"></script>
+		<script>
+		  // Simple check to verify script loading
+		  console.log('CookieYes script loaded');
+		</script>
+		<!-- End cookieyes banner -->
 	</head>
 	<body>
 		<Navigation />
@@ -35,6 +42,7 @@ const { title } = Astro.props;
 						<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Legal</h3>
 						<ul class="space-y-2 text-gray-600 dark:text-gray-400">
 							<li><a href="/privacy" class="hover:text-indigo-600">Privacy Policy</a></li>
+							<li><a href="/cookies" class="hover:text-indigo-600">Cookie Policy</a></li>
 							<li><a href="/terms" class="hover:text-indigo-600">Terms of Service</a></li>
 						</ul>
 					</div>
