@@ -11,15 +11,19 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>{title || "Boxing Timer Champ"}</title>
+		
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-		<!-- Start cookieyes banner -->
+		
+		<!-- CookieYes Banner - Load First -->
 		<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/746be0fcd3798bc5bf52a785/script.js"></script>
+		
+		<!-- Deferred GA4 Script - Only loads after consent -->
 		<script>
-		  // Simple check to verify script loading
-		  console.log('CookieYes script loaded');
+			window.GA_MEASUREMENT_ID = 'G-M6462KMKPS';
+			window.gaLoaded = false;
 		</script>
-		<!-- End cookieyes banner -->
+		
 		<style>
 		  /* Sticky footer styles */
 		  html {
@@ -81,5 +85,72 @@ const { title } = Astro.props;
 		  <slot />
 		</div>
 		<Footer />
+		
+		<script>
+		  // GA4 Integration with CookieYes
+		  
+		  // 1. Function to dynamically load GA script
+		  function loadGAScript() {
+		    if (window.gaLoaded) return;
+		    
+		    // Create gtag script
+		    const gtagScript = document.createElement('script');
+		    gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${window.GA_MEASUREMENT_ID}`;
+		    gtagScript.async = true;
+		    document.head.appendChild(gtagScript);
+		    
+		    // Initialize dataLayer
+		    window.dataLayer = window.dataLayer || [];
+		    function gtag() { dataLayer.push(arguments); }
+		    gtag('js', new Date());
+		    gtag('config', window.GA_MEASUREMENT_ID);
+		    
+		    window.gaLoaded = true;
+		  }
+		  
+		  // 2. Function to initialize CookieYes event listeners
+		  function initCookieConsent() {
+		    // If CookieYes isn't loaded yet, add a listener for when it's ready
+		    if (typeof window.cookieyes === 'undefined') {
+		      document.addEventListener('cookieyes_consent_update', handleConsentUpdate);
+		      return;
+		    }
+		    
+		    // Handle existing consent state
+		    if (window.cookieyes.consent.get('analytics')) {
+		      loadGAScript();
+		    }
+		    
+		    // Listen for future consent changes
+		    window.cookieyes.consent.on('change', function() {
+		      if (window.cookieyes.consent.get('analytics')) {
+		        loadGAScript();
+		      }
+		    });
+		  }
+		  
+		  // 3. Handler for cookieyes consent events
+		  function handleConsentUpdate(event) {
+		    const analyticsConsent = event.detail && event.detail.analytics;
+		    if (analyticsConsent) {
+		      loadGAScript();
+		    }
+		  }
+		  
+		  // 4. Initialize when DOM is ready
+		  document.addEventListener('DOMContentLoaded', function() {
+		    // Wait a reasonable time for CookieYes to initialize
+		    setTimeout(initCookieConsent, 500);
+		  });
+		  
+		  // 5. Fallback initialization - if CookieYes takes too long or fails
+		  window.addEventListener('load', function() {
+		    setTimeout(function() {
+		      if (typeof window.cookieyes !== 'undefined' && window.cookieyes.consent.get('analytics')) {
+		        loadGAScript();
+		      }
+		    }, 2000);
+		  });
+		</script>
 	</body>
 </html>
