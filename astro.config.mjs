@@ -21,8 +21,9 @@ export default defineConfig({
       emptyOutDir: true
     }
   },
-  // Add 404 page handling
-  redirects: {
-    '*': '/404'
+  // Properly configured 404 page
+  output: 'static',
+  build: {
+    format: 'file'
   }
 });
