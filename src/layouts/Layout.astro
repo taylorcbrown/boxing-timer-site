@@ -16,6 +16,16 @@ const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname ===
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 		
+		<!-- Google Tag Manager -->
+		<script>
+		  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		  })(window,document,'script','dataLayer','GTM-TX83T7D9');
+		</script>
+		<!-- End Google Tag Manager -->
+		
 		<!-- CookieYes Banner - Only on production -->
 		{!isLocalhost && (
 			<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/746be0fcd3798bc5bf52a785/script.js"></script>
@@ -77,43 +87,17 @@ const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname ===
 		</style>
 	</head>
 	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript>
+		  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TX83T7D9"
+		  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		
 		<div class="content-wrapper">
 		  <Navigation />
 		  <slot />
 		</div>
 		<Footer />
-		
-		<!-- Simple GA4 implementation -->
-		<script>
-		  // Check if we're on localhost
-		  const isLocalEnvironment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-		  
-		  // Wait for DOM to be ready
-		  document.addEventListener('DOMContentLoaded', function() {
-		    // Only need to define these once
-		    window.dataLayer = window.dataLayer || [];
-		    function gtag() { dataLayer.push(arguments); }
-		    
-		    // Initialize GA with appropriate settings for environment
-		    const gaScript = document.createElement('script');
-		    gaScript.async = true;
-		    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-M6462KMKPS";
-		    document.head.appendChild(gaScript);
-		    
-		    // Configure GA
-		    gtag('js', new Date());
-		    if (isLocalEnvironment) {
-		      // In local dev, don't send actual hits
-		      gtag('config', 'G-M6462KMKPS', {
-		        'debug_mode': true,
-		        'send_page_view': false
-		      });
-		      console.log('GA4 in debug mode - no data being sent');
-		    } else {
-		      // In production - normal tracking (controlled by CookieYes)
-		      gtag('config', 'G-M6462KMKPS');
-		    }
-		  });
-		</script>
 	</body>
 </html>
