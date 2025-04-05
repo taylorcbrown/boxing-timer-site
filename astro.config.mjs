@@ -5,14 +5,20 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
+  site: "https://boxingtimerchamp.com",
   trailingSlash: "never",
+  build: {
+    site: "https://boxingtimerchamp.com",
+    format: "file",
+    assets: "static",
+    client: "dist/client",
+    server: "dist/server",
+    output: "static"
+  },
   vite: {
-    css: {
-      preprocessorOptions: {
-        css: {
-          import: false
-        }
-      }
+    build: {
+      outDir: "dist",
+      emptyOutDir: true
     }
   }
 });
