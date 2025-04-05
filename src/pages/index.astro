@@ -1,51 +1,9 @@
 ---
-import "../styles/global.css";
+import Layout from '../layouts/Layout.astro';
+const title = "Boxing Timer Champ - The Best Boxing Round Timer";
 ---
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ✅ SEO Meta Tags -->
-	<title>Boxing Timer Champ - The Best Boxing Round Timer</title>
-    <meta name="description" content="Boxing Timer Champ is the best boxing round timer for serious training. Customizable rounds, interval breaks, and a premium dark interface designed for fighters.">
-    <meta name="author" content="Boxing Timer Champ">
-    <meta name="robots" content="noindex, nofollow">
-
-    <!-- ✅ Open Graph for Social Sharing -->
-    <meta property="og:title" content="Boxing Timer Champ - The Best Boxing Round Timer">
-    <meta property="og:description" content="Customizable rounds, interval breaks, and a premium dark UI designed for fighters. Train like a pro.">
-    <meta property="og:url" content="https://boxingtimerchamp.com">
-    <meta property="og:type" content="website">
-
-    <!-- ✅ Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Boxing Timer Champ - The Best Boxing Timer App">
-    <meta name="twitter:description" content="Customizable rounds, interval breaks, and a premium dark UI designed for fighters.">
-    <meta name="twitter:image" content="/assets/boxing-timer-champ-og-image.jpg">
-
-    <title>Boxing Timer Champ - The Ultimate Boxing Round Timer</title>
-
-    <!-- ✅ Structured Data (JSON-LD for SEO) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Boxing Timer Champ",
-        "description": "A professional boxing round timer with customizable rounds, rest intervals, a premium dark UI, and background operation support.",
-        "operatingSystem": "iOS",
-        "applicationCategory": "SportsApplication",
-        "offers": {
-            "@type": "Offer",
-            "price": "4.99",
-            "priceCurrency": "USD"
-        }
-    }
-    </script>
-</head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-200 font-sans">
-    
+<Layout title={title}>
     <!-- Hero Section -->
     <header class="text-center py-16 bg-gradient-to-r from-indigo-600 to-blue-500 text-white">
         <h1 class="text-4xl font-extrabold tracking-tight">🥊 Boxing Timer Champ</h1>
@@ -131,8 +89,6 @@ import "../styles/global.css";
     </main>
 
     <footer class="mt-16 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
-        <p>© 2025 Boxing Timer Champ. All rights reserved.</p>
+        <p> 2025 Boxing Timer Champ. All rights reserved.</p>
     </footer>
-
-</body>
-</html>
+</Layout>
