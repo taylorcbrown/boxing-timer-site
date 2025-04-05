@@ -6,20 +6,20 @@ interface Props {
 const { activePage } = Astro.props;
 ---
 
-<nav class="bg-white dark:bg-gray-900 shadow-lg">
+<nav class="bg-elegant-primary">
   <div class="container mx-auto px-4">
-    <div class="flex justify-between h-16">
+    <div class="flex justify-between h-16 items-center">
       <div class="flex items-center">
-        <a href="/" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Boxing Timer Champ</a>
+        <a href="/" class="text-white font-bold text-2xl">Boxing Timer Champ</a>
       </div>
       <div class="hidden md:flex items-center space-x-8">
-        <a href="/" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 {activePage === '/' ? 'text-indigo-600 dark:text-indigo-400' : ''}">Home</a>
-        <a href="/about" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 {activePage === 'about' ? 'text-indigo-600 dark:text-indigo-400' : ''}">About</a>
-        <a href="/contact" class="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 {activePage === 'contact' ? 'text-indigo-600 dark:text-indigo-400' : ''}">Contact</a>
+        <a href="/" class="text-gray-300 hover:text-white {activePage === '/' ? 'text-white' : ''}">Home</a>
+        <a href="/about" class="text-gray-300 hover:text-white {activePage === 'about' ? 'text-white' : ''}">About</a>
+        <a href="/contact" class="text-gray-300 hover:text-white {activePage === 'contact' ? 'text-white' : ''}">Contact</a>
       </div>
 
       <div class="md:hidden">
-        <button class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:text-gray-900 dark:focus:text-gray-100">
+        <button class="text-gray-300 hover:text-white focus:outline-none focus:text-white">
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>

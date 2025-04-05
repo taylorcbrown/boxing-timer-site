@@ -20,5 +20,9 @@ export default defineConfig({
       outDir: "dist",
       emptyOutDir: true
     }
+  },
+  // Add 404 page handling
+  redirects: {
+    '*': '/404'
   }
 });

@@ -3,106 +3,47 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Privacy Policy">
-  <main class="container mx-auto px-4 py-8">
-    <div class="max-w-3xl mx-auto">
-      <h1 class="text-3xl font-bold mb-6">Privacy Policy</h1>
-      <p class="text-gray-600 mb-8">
-        Last updated: April 4, 2025
-      </p>
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <div class="space-y-12">
+      <div>
+        <h1 class="text-4xl font-bold text-elegant-text-primary mb-6">Privacy Policy</h1>
+        <p class="text-xl text-elegant-text-secondary mb-8">Last updated: April 4, 2025</p>
+      </div>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Introduction</h2>
-        <p class="text-gray-600 mb-4">
-          At Boxing Timer Champ, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and protect your data when you use our website and mobile application.
-        </p>
-      </section>
+      <div class="space-y-8">
+        <section>
+          <h2 class="text-3xl font-bold text-elegant-text-primary mb-4">Introduction</h2>
+          <p class="text-elegant-text-secondary mb-4">
+            At Boxing Timer Champ, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and protect your data when you use our website and mobile application.
+          </p>
+        </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Data Collection and Usage</h2>
-        
-        <h3 class="text-xl font-semibold mb-3">Firebase Analytics</h3>
-        <p class="text-gray-600 mb-3">
-          We use Firebase Analytics (tracker-free version) to collect basic usage data about our application. This helps us understand how users interact with our app to improve its functionality and user experience.
-        </p>
-        <p class="text-gray-600 mb-4">
-          The tracker-free version of Firebase Analytics means we do not collect any personally identifiable information (PII) or track individual user behavior across different websites or applications. This data is aggregated and anonymized to provide us with general insights about app usage.
-        </p>
+        <section>
+          <h2 class="text-3xl font-bold text-elegant-text-primary mb-4">Data Collection and Usage</h2>
+          <p class="text-elegant-text-secondary mb-4">
+            We collect information that you voluntarily provide to us when using our services. This may include:
+          </p>
+          <ul class="list-disc pl-6 text-elegant-text-secondary">
+            <li>Information you provide when contacting us</li>
+            <li>Usage data when using our timer application</li>
+            <li>Technical information about your device and browser</li>
+          </ul>
+        </section>
 
-        <h3 class="text-xl font-semibold mb-3">Google AdMob</h3>
-        <p class="text-gray-600 mb-3">
-          We use Google AdMob to serve advertisements within our application. AdMob's privacy policy can be found <a href="https://policies.google.com/privacy" class="text-indigo-600 hover:text-indigo-700">here</a>. AdMob uses cookies and similar technologies to deliver relevant ads and measure their effectiveness.
-        </p>
-        <p class="text-gray-600 mb-4">
-          You can opt out of personalized ads by adjusting your device's advertising settings. This will not affect the number of ads you see, but they may be less relevant to your interests.
-        </p>
+        <section>
+          <h2 class="text-3xl font-bold text-elegant-text-primary mb-4">Data Security</h2>
+          <p class="text-elegant-text-secondary mb-4">
+            We implement appropriate security measures to protect your personal information. Your data is stored securely and only accessed by authorized personnel.
+          </p>
+        </section>
 
-        <h3 class="text-xl font-semibold mb-3">Google Analytics 4 (GA4)</h3>
-        <p class="text-gray-600 mb-3">
-          We use Google Analytics 4 (GA4) to analyze website traffic and user behavior. GA4 collects data about how visitors interact with our website, including:
-        </p>
-        <ul class="list-disc list-inside text-gray-600 mb-4">
-          <li>Pages visited</li>
-          <li>Time spent on pages</li>
-          <li>Bounce rate</li>
-          <li>Device information (type, operating system, browser)</li>
-          <li>Geographic location (city and country level)</li>
-        </ul>
-        <p class="text-gray-600 mb-4">
-          We use this data to improve our website's performance and user experience. Google's privacy policy regarding GA4 can be found <a href="https://policies.google.com/privacy" class="text-indigo-600 hover:text-indigo-700">here</a>.
-        </p>
-
-        <h3 class="text-xl font-semibold mb-3">What We Don't Collect</h3>
-        <p class="text-gray-600 mb-3">
-          We do not collect:
-        </p>
-        <ul class="list-disc list-inside text-gray-600 mb-4">
-          <li>Your name or personal identification</li>
-          <li>Your contact information (unless provided through our contact form)</li>
-          <li>Your email address (unless provided through our contact form)</li>
-          <li>Financial information</li>
-          <li>Sensitive personal information</li>
-        </ul>
-      </section>
-
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Data Security</h2>
-        <p class="text-gray-600 mb-3">
-          We implement appropriate security measures to protect your data from unauthorized access, alteration, disclosure, or destruction. All data is stored using industry-standard security protocols and encryption.
-        </p>
-        <p class="text-gray-600 mb-4">
-          If you have any questions about our security practices, please contact us through our contact form.
-        </p>
-      </section>
-
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Your Rights</h2>
-        <p class="text-gray-600 mb-3">
-          You have the right to:</p>
-        <ul class="list-disc list-inside text-gray-600 mb-4">
-          <li>Access the personal information we hold about you</li>
-          <li>Request corrections to your personal information</li>
-          <li>Request deletion of your personal information</li>
-          <li>Object to the processing of your personal information</li>
-          <li>Request the transfer of your personal information</li>
-        </ul>
-        <p class="text-gray-600 mb-4">
-          To exercise any of these rights, please contact us through our contact form.
-        </p>
-      </section>
-
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Changes to This Privacy Policy</h2>
-        <p class="text-gray-600 mb-4">
-          We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. We encourage you to review this Privacy Policy periodically for any changes.
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
-        <p class="text-gray-600 mb-4">
-          If you have any questions about this Privacy Policy or our data handling practices, please contact us through our contact form available on the website.
-        </p>
-      </section>
+        <section>
+          <h2 class="text-3xl font-bold text-elegant-text-primary mb-4">Your Rights</h2>
+          <p class="text-elegant-text-secondary mb-4">
+            You have the right to access, correct, or delete your personal information. You can also object to the processing of your data or request data portability.
+          </p>
+        </section>
+      </div>
     </div>
   </main>
 </Layout>
