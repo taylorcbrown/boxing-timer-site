@@ -32,6 +32,19 @@ export default {
           800: '#991b1b',
           900: '#7f1d1d',
         },
+        // Apple Messages green
+        applegreen: {
+          DEFAULT: '#30d158', // main
+          light: '#4be769', // lighter
+          dark: '#28b34a', // darker
+          gradientFrom: '#30d158',
+          gradientTo: '#28b34a',
+        },
+        // Golden yellow from app icon
+        golden: {
+          DEFAULT: '#FFC300', // goldenrod main
+          dark: '#FFB300', // goldenrod dark accent
+        },
         // Dark neutral theme
         elegant: {
           // Backgrounds

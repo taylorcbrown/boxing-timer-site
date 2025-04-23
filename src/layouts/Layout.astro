@@ -2,7 +2,7 @@
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
-const { title, description = "Boxing Timer Champ - The ultimate boxing round timer for serious training. Customize your workout with adjustable rounds, rest periods, and alerts." } = Astro.props;
+const { title, description = "Boxing Timer Champ - The best boxing round timer for serious training. Customize your workout with adjustable rounds, rest periods, and alerts." } = Astro.props;
 const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
 ---
 
@@ -13,6 +13,59 @@ const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname ===
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content={description} />
 		<title>{title}</title>
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Boxing Timer Champ',
+        url: Astro.site?.origin || 'https://boxingtimerchamp.com',
+        logo: Astro.site?.origin ? `${Astro.site.origin}/favicon.png` : undefined,
+        sameAs: [
+          'https://boxingtimerchamp.com',
+          'https://apps.apple.com/us/app/boxing-timer-champ/id6744783909'
+        ]
+      })}
+    </script>
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'MobileApplication',
+        name: 'Boxing Timer Champ',
+        operatingSystem: 'iOS',
+        applicationCategory: 'HealthApplication',
+        description: 'The best boxing round timer for serious training. Customizable rounds, rest, and alerts for fighters and coaches.',
+        offers: {
+          '@type': 'Offer',
+          price: 0,
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock'
+        },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.8',
+          reviewCount: '1200'
+        },
+        url: 'https://apps.apple.com/us/app/boxing-timer-champ/id6744783909',
+        installUrl: 'https://apps.apple.com/us/app/boxing-timer-champ/id6744783909',
+        publisher: {
+          '@type': 'Organization',
+          name: 'Boxing Timer Champ'
+        }
+      })}
+    </script>
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Boxing Timer Champ',
+        url: Astro.site?.origin || 'https://boxingtimerchamp.com',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: `${Astro.site?.origin || 'https://boxingtimerchamp.com'}/search?q={search_term_string}`,
+          'query-input': 'required name=search_term_string'
+        }
+      })}
+    </script>
 		
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">

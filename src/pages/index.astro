@@ -1,31 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
 const title = "Boxing Timer Champ - The Best Boxing Timer App";
+import appIconOptimized from '../assets/app-icon-224.png';
+import downloadOnAppStore from '../assets/download-on-app-store.svg';
 ---
 
 <Layout title={title}>
     <!-- Hero Section -->
-    <header class="text-center py-32 bg-elegant-primary text-elegant-text-primary">
-        <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-4">
-            <i class="fas fa-boxing-glove text-red-500 mr-2"></i>
-            Boxing Timer Champ
-        </h1>
-        <p class="text-xl md:text-2xl text-elegant-text-secondary mb-8">Your ultimate boxing round timer for serious training.</p>
-        <a href="https://testflight.apple.com/join/AB23KruG" target="_blank" rel="noopener noreferrer"
-           class="inline-block px-8 py-4 text-lg font-semibold rounded-lg bg-red-500 text-white hover:bg-red-600 transition-all duration-200 transform hover:scale-105">
-            Join the Beta
-        </a>
-    </header>
+    <header class="text-center py-32 bg-gradient-to-b from-applegreen-gradientFrom to-applegreen-gradientTo text-white flex flex-col items-center">
+    <img src={appIconOptimized.src} alt="Boxing Timer Champ App Icon" class="mx-auto mb-6 w-28 h-28 rounded-2xl shadow-2xl" width="112" height="112" loading="eager" />
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-4 text-golden drop-shadow-lg">
+        Boxing Timer Champ
+    </h1>
+    <p class="text-xl md:text-2xl text-elegant-text-secondary mb-8">The best boxing round timer for serious training.</p>
+    <a href="https://apps.apple.com/us/app/boxing-timer-champ/id6744783909?itscg=30200&itsct=apps_box_link&mttnsubad=6744783909" target="_blank" rel="noopener noreferrer"
+       class="inline-block mt-2">
+        <img src={downloadOnAppStore.src} alt="Download on the App Store" class="h-14 w-auto hover:scale-105 transition-transform duration-200" width="168" height="56" loading="lazy" />
+    </a>
+</header>
 
     <main class="max-w-4xl mx-auto px-6 py-12">
         <!-- Features Section -->
         <section class="text-center">
-            <h2 class="text-4xl font-bold text-elegant-text-primary mb-6">Why Choose Boxing Timer Champ?</h2>
+            <h2 class="text-4xl font-bold text-golden mb-6 drop-shadow-md">Why Choose Boxing Timer Champ?</h2>
             <p class="text-xl text-elegant-text-secondary mb-12">Take your fight training to the next level with a professional boxing timer built for serious athletes.</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 <div class="p-8 bg-elegant-card-primary rounded-xl shadow-card border border-elegant-border-primary">
                     <div class="flex items-center mb-6">
-                        <i class="fas fa-clock text-red-500 mr-4 text-xl"></i>
+                        <i class="fas fa-clock text-green-500 mr-4 text-xl"></i>
                         <h3 class="text-xl font-semibold text-elegant-text-primary">Customizable Rounds</h3>
                     </div>
                     <p class="text-elegant-text-tertiary">Set round lengths and rest times that match your workout needs.</p>
@@ -33,7 +35,7 @@ const title = "Boxing Timer Champ - The Best Boxing Timer App";
 
                 <div class="p-8 bg-elegant-card-secondary rounded-xl shadow-card border border-elegant-border-primary">
                     <div class="flex items-center mb-6">
-                        <i class="fas fa-bell text-red-500 mr-4 text-xl"></i>
+                        <i class="fas fa-bell text-green-500 mr-4 text-xl"></i>
                         <h3 class="text-xl font-semibold text-elegant-text-primary">Audible & Visual Alerts</h3>
                     </div>
                     <p class="text-elegant-text-tertiary">Stay focused with clear audio cues and an easy-to-read countdown.</p>
@@ -41,7 +43,7 @@ const title = "Boxing Timer Champ - The Best Boxing Timer App";
 
                 <div class="p-8 bg-elegant-card-primary rounded-xl shadow-card border border-elegant-border-primary">
                     <div class="flex items-center mb-6">
-                        <i class="fas fa-moon text-red-500 mr-4 text-xl"></i>
+                        <i class="fas fa-moon text-green-500 mr-4 text-xl"></i>
                         <h3 class="text-xl font-semibold text-elegant-text-primary">Dark UI Mode</h3>
                     </div>
                     <p class="text-elegant-text-tertiary">Premium dark mode for enhanced visibility during intense training.</p>
@@ -49,7 +51,7 @@ const title = "Boxing Timer Champ - The Best Boxing Timer App";
 
                 <div class="p-8 bg-elegant-card-secondary rounded-xl shadow-card border border-elegant-border-primary">
                     <div class="flex items-center mb-6">
-                        <i class="fas fa-mobile-alt text-red-500 mr-4 text-xl"></i>
+                        <i class="fas fa-mobile-alt text-green-500 mr-4 text-xl"></i>
                         <h3 class="text-xl font-semibold text-elegant-text-primary">Background Support</h3>
                     </div>
                     <p class="text-elegant-text-tertiary">Keep the timer running even when using other apps.</p>
@@ -57,7 +59,7 @@ const title = "Boxing Timer Champ - The Best Boxing Timer App";
 
                 <div class="p-8 bg-elegant-card-primary rounded-xl shadow-card border border-elegant-border-primary">
                     <div class="flex items-center mb-6">
-                        <i class="fas fa-bullseye text-red-500 mr-4 text-xl"></i>
+                        <i class="fas fa-bullseye text-green-500 mr-4 text-xl"></i>
                         <h3 class="text-xl font-semibold text-elegant-text-primary">Precision Training</h3>
                     </div>
                     <p class="text-elegant-text-tertiary">Designed for boxing, MMA, HIIT, and all combat sports.</p>
@@ -65,7 +67,7 @@ const title = "Boxing Timer Champ - The Best Boxing Timer App";
 
                 <div class="p-8 bg-elegant-card-secondary rounded-xl shadow-card border border-elegant-border-primary">
                     <div class="flex items-center mb-6">
-                        <i class="fas fa-tags text-red-500 mr-4 text-xl"></i>
+                        <i class="fas fa-tags text-green-500 mr-4 text-xl"></i>
                         <h3 class="text-xl font-semibold text-elegant-text-primary">Free & Premium Options</h3>
                     </div>
                     <p class="text-elegant-text-tertiary">Use the free version with ads or upgrade for just $4.99.</p>
@@ -75,12 +77,12 @@ const title = "Boxing Timer Champ - The Best Boxing Timer App";
 
         <!-- How It Works Section -->
         <section class="mt-24 text-center">
-            <h2 class="text-4xl font-bold text-elegant-text-primary mb-6">User-Friendly Training Partner</h2>
+            <h2 class="text-4xl font-bold text-golden mb-6 drop-shadow-md">User-Friendly Training Partner</h2>
             <p class="text-xl text-elegant-text-secondary mb-12">Boxing Timer Champ is designed to enhance your workout, not complicate it.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="p-8 bg-elegant-card-primary rounded-xl shadow-card border border-elegant-border-primary">
                     <div class="flex items-center justify-center mb-8">
-                        <i class="fas fa-sliders-h text-red-500 mr-4 text-2xl"></i>
+                        <i class="fas fa-sliders-h text-green-500 mr-4 text-2xl"></i>
                         <h3 class="text-xl font-semibold text-elegant-text-primary">Effortless Control</h3>
                     </div>
                     <p class="text-elegant-text-tertiary">Navigate and adjust round times with intuitive controls that don't interrupt your focus.</p>
@@ -88,7 +90,7 @@ const title = "Boxing Timer Champ - The Best Boxing Timer App";
 
                 <div class="p-8 bg-elegant-card-secondary rounded-xl shadow-card border border-elegant-border-primary">
                     <div class="flex items-center justify-center mb-8">
-                        <i class="fas fa-forward text-red-500 mr-4 text-2xl"></i>
+                        <i class="fas fa-forward text-green-500 mr-4 text-2xl"></i>
                         <h3 class="text-xl font-semibold text-elegant-text-primary">Skip & Extend Rounds</h3>
                     </div>
                     <p class="text-elegant-text-tertiary">Unlike rigid timers, easily jump to the next round or extend current ones as your energy levels dictate.</p>
@@ -96,7 +98,7 @@ const title = "Boxing Timer Champ - The Best Boxing Timer App";
 
                 <div class="p-8 bg-elegant-card-primary rounded-xl shadow-card border border-elegant-border-primary">
                     <div class="flex items-center justify-center mb-8">
-                        <i class="fas fa-save text-red-500 mr-4 text-2xl"></i>
+                        <i class="fas fa-save text-green-500 mr-4 text-2xl"></i>
                         <h3 class="text-xl font-semibold text-elegant-text-primary">Save Custom Workouts</h3>
                     </div>
                     <p class="text-elegant-text-tertiary">Create and store your perfect training routines, eliminating setup time before each session.</p>
@@ -105,13 +107,14 @@ const title = "Boxing Timer Champ - The Best Boxing Timer App";
         </section>
 
         <!-- Call to Action -->
-        <section class="mt-24 text-center">
-            <h2 class="text-4xl font-bold text-elegant-text-primary mb-6">Get Ready for the Ultimate Boxing Timer</h2>
-            <p class="text-xl text-elegant-text-secondary mb-12">Designed for fighters, built for performance. Launching soon!</p>
-            <a href="https://testflight.apple.com/join/AB23KruG" target="_blank" rel="noopener noreferrer"
-               class="inline-block px-8 py-4 text-lg font-semibold rounded-lg bg-red-500 text-white hover:bg-red-600 transition-all duration-200 transform hover:scale-105">
-                Join the Beta
+        <section class="mt-24">
+          <div class="rounded-2xl bg-gradient-to-r from-applegreen-gradientFrom to-applegreen-gradientTo shadow-2xl px-8 py-12 flex flex-col items-center text-center">
+            <h2 class="text-4xl font-bold text-golden mb-4 drop-shadow-md">Get The Best Boxing Timer App</h2>
+            <p class="text-xl text-white/90 mb-8">Designed for fighters, built for performance. Download now.</p>
+            <a href="https://apps.apple.com/us/app/boxing-timer-champ/id6744783909?itscg=30200&itsct=apps_box_link&mttnsubad=6744783909" target="_blank" rel="noopener noreferrer" class="inline-block">
+              <img src={downloadOnAppStore.src} alt="Download on the App Store" class="h-14 w-auto hover:scale-105 transition-transform duration-200 drop-shadow-xl" width="168" height="56" loading="lazy" />
             </a>
+          </div>
         </section>
     </main>
 </Layout>
