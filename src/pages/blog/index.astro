@@ -1,0 +1,184 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Define our blog post type
+interface BlogPost {
+  url: string;
+  title: string;
+  description: string;
+  publishDate: string;
+  heroImage: string;
+  alt: string;
+  isDraft?: boolean;
+}
+
+// Type for the raw Astro file import
+interface AstroFile {
+  file: string;
+  frontmatter: Partial<BlogPost>;
+}
+
+// Get all blog post files
+const allPosts = (await Astro.glob('./*.astro')) as AstroFile[];
+
+// For debugging - log what we're finding
+console.log(`Found ${allPosts.length} total posts`);
+
+// Process posts to extract frontmatter and URL
+const processedPosts: BlogPost[] = allPosts
+  .filter((post: AstroFile) => {
+    // Skip this index page
+    const fileName = post.file.split('/').pop();
+    if (fileName === 'index.astro') {
+      console.log(`Skipping index page: ${post.file}`);
+      return false;
+    }
+    return true;
+  })
+  .map((post: AstroFile): BlogPost | null => {
+    try {
+      // Log the post structure for debugging
+      console.log(`Processing post: ${post.file}`);
+      
+      // Get the URL path (remove .astro extension and add to /blog/)
+      const slug = post.file.split('/').pop()?.replace(/\.astro$/, '') || '';
+      const url = `/blog/${slug}`;
+      
+      // Access frontmatter directly
+      const frontmatter = post.frontmatter || {};
+      console.log('Frontmatter keys:', Object.keys(frontmatter));
+      
+      // Create the processed post with frontmatter data
+      const processedPost: BlogPost = {
+        url,
+        title: frontmatter.title || 'Untitled Post',
+        description: frontmatter.description || '',
+        publishDate: frontmatter.publishDate as string || new Date().toISOString(),
+        heroImage: frontmatter.heroImage as string || '',
+        alt: frontmatter.alt as string || '',
+        isDraft: frontmatter.isDraft
+      };
+      
+      console.log(`Processed post: ${processedPost.title}, date: ${processedPost.publishDate}`);
+      return processedPost;
+    } catch (error) {
+      console.error(`Error processing post ${post.file}:`, error);
+      return null;
+    }
+  })
+  .filter((post: BlogPost | null): post is BlogPost => {
+    // Filter out any null posts (from failed processing)
+    if (!post) return false;
+    
+    // Skip drafts
+    if (post.isDraft) {
+      console.log(`Skipping draft: ${post.title}`);
+      return false;
+    }
+    
+    // Skip future posts
+    const postDate = new Date(post.publishDate);
+    const currentDate = new Date();
+    if (postDate > currentDate) {
+      console.log(`Skipping future post: ${post.title}, date: ${postDate.toISOString()}`);
+      return false;
+    }
+    
+    return true;
+  })
+  .sort((a: BlogPost, b: BlogPost) => {
+    // Sort by date (newest first)
+    return new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf();
+  });
+
+console.log(`Found ${processedPosts.length} published posts`);
+---
+
+<Layout title="Blog | Boxing Timer Champ" description="Latest news, tips, and updates about Boxing Timer Champ - the best boxing round timer app for serious training.">
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8">Boxing Timer Champ Blog</h1>
+    
+    <p class="text-gray-300 mb-12">
+      Stay up to date with the latest news, features, tips and tricks for getting the most out of Boxing Timer Champ.
+    </p>
+    
+    <div class="max-w-3xl mx-auto space-y-10">
+      {processedPosts.length === 0 ? (
+        <div class="text-center py-12">
+          <p class="text-gray-400 text-lg">No blog posts found. Check back soon!</p>
+        </div>
+      ) : (
+        processedPosts.map(post => {
+          const publishDate = post.publishDate 
+            ? new Date(post.publishDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })
+            : 'No date';
+          
+          return (
+            <article class="bg-elegant-card-primary rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-[1.01] hover:shadow-xl">
+              {post.heroImage && (
+                <a href={post.url} class="block">
+                  <img 
+                    src={post.heroImage} 
+                    alt={post.alt || `Featured image for ${post.title}`}
+                    class="w-full h-64 object-cover"
+                  />
+                </a>
+              )}
+              
+              <div class="p-8">
+                <h2 class="text-3xl font-bold mb-4">
+                  <a href={post.url} class="hover:text-green-500 transition-colors">
+                    {post.title}
+                  </a>
+                </h2>
+                
+                <div class="flex items-center text-gray-400 mb-6">
+                  <span class="flex items-center">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    <time datetime={post.publishDate || ''} class="text-sm">
+                      {publishDate}
+                    </time>
+                  </span>
+                </div>
+                
+                {post.description && (
+                  <p class="text-gray-300 mb-6 text-lg">
+                    {post.description}
+                  </p>
+                )}
+                
+                <a href={post.url} class="inline-flex items-center text-green-500 hover:text-green-400 font-semibold group">
+                  Read More 
+                  <span class="ml-2 group-hover:translate-x-1 transition-transform">
+                    <i class="fas fa-arrow-right"></i>
+                  </span>
+                </a>
+              </div>
+            </article>
+          );
+        })
+      )}
+    </div>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    'name': 'Boxing Timer Champ Blog',
+    'description': 'Latest news, tips, and updates about Boxing Timer Champ - the best boxing round timer app for serious training.',
+    'url': Astro.url.href,
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Boxing Timer Champ',
+      'logo': {
+        '@type': 'ImageObject',
+        'url': `${Astro.site?.origin || 'https://boxingtimerchamp.com'}/favicon.png`
+      }
+    }
+  })}>
+  </script>
+</Layout>

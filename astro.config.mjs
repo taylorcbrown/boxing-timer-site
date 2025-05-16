@@ -7,23 +7,21 @@ export default defineConfig({
   integrations: [tailwind()],
   site: "https://boxingtimerchamp.com",
   trailingSlash: "never",
-  build: {
-    site: "https://boxingtimerchamp.com",
-    format: "file",
-    assets: "static",
-    client: "dist/client",
-    server: "dist/server",
-    output: "static"
-  },
-  vite: {
-    build: {
-      outDir: "dist",
-      emptyOutDir: true
-    }
-  },
-  // Properly configured 404 page
   output: 'static',
   build: {
-    format: 'file'
+    format: 'file',
+    assets: 'static',
+    client: 'dist/client',
+    server: 'dist/server'
+  },
+  vite: {
+    server: {
+      port: 3000,
+      strictPort: true
+    },
+    build: {
+      outDir: 'dist',
+      emptyOutDir: true
+    }
   }
 });

@@ -1,0 +1,152 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+// This is a draft post - the publishDate is set in the future to prevent it from showing up in the blog index
+export const publishDate = '2025-05-23T09:00:00-07:00'; // Future date - next week
+export const heroImage = '/blog/boxing-tips-draft-hero.jpg';
+export const isDraft = true; // You can use this flag in your blog index to filter out drafts if needed
+
+// Add frontmatter properties for the blog index
+export const frontmatter = {
+  title: "10 Pro Tips for Getting the Most Out of Boxing Timer Champ",
+  description: "Learn expert techniques and strategies to maximize your boxing training with Boxing Timer Champ's powerful features.",
+  publishDate: publishDate,
+  heroImage: heroImage,
+  alt: "Boxing Timer Champ Tips and Tricks",
+  isDraft: isDraft
+};
+---
+
+<BlogLayout
+  title="10 Pro Tips for Getting the Most Out of Boxing Timer Champ"
+  description="Learn expert techniques and strategies to maximize your boxing training with Boxing Timer Champ's powerful features."
+  publishDate={publishDate}
+  heroImage={heroImage}
+  alt="Boxing Timer Champ Tips and Tricks"
+>
+  <p class="lead text-xl mb-6">
+    Whether you're new to boxing or a seasoned professional, these tips will help you get the most out of your Boxing Timer Champ app and take your training to the next level.
+  </p>
+  
+  <div class="bg-green-500/20 p-4 rounded-lg mb-8">
+    <h3 class="font-bold">DRAFT POST - NOTES FOR AUTHOR</h3>
+    <p>This is a draft post to be published next week. Consider adding more specific tips for premium users, screenshots of the app features, and quotes from professional fighters who use the app.</p>
+  </div>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">1. Customize Your Alerts for Different Training Phases</h2>
+  
+  <p class="mb-4">
+    Different training phases require different alerts. Configure Boxing Timer Champ to match your specific needs:
+  </p>
+  
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li><strong>Technique Work:</strong> Set mid-round alerts every 30 seconds to remind you to switch techniques</li>
+    <li><strong>Endurance Training:</strong> Configure 10-second warnings to push harder at the end of each round</li>
+    <li><strong>Active Recovery:</strong> Use gentle alerts during rest periods to remind you to stay moving</li>
+  </ul>
+  
+  <p class="mb-4">
+    [Add screenshot of alert configuration screen here]
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">2. Create Saved Presets for Different Workout Types</h2>
+  
+  <p class="mb-4">
+    Save time by creating custom presets for your different workout types:
+  </p>
+  
+  <div class="bg-elegant-secondary p-5 rounded-lg mb-6">
+    <h4 class="font-bold mb-2">Recommended Preset Examples:</h4>
+    <ul class="list-disc pl-6 space-y-1">
+      <li><strong>Warm-up:</strong> 6 rounds × 1 minute with 15-second rests</li>
+      <li><strong>Technical Focus:</strong> 8 rounds × 2 minutes with 45-second rests</li>
+      <li><strong>Fight Simulation:</strong> 10-12 rounds × 3 minutes with 60-second rests</li>
+      <li><strong>HIIT Cardio:</strong> 12 rounds × 30 seconds with 10-second rests</li>
+    </ul>
+  </div>
+  
+  <p class="mb-4">
+    [Expand on how to create and save presets in the app]
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">3. Integrate Your Boxing Timer with Music</h2>
+  
+  <p class="mb-4">
+    Did you know Boxing Timer Champ works perfectly with your favorite music apps? Here's how to optimize your audio experience:
+  </p>
+  
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li>Configure alert volume independently from music volume</li>
+    <li>Create playlists that match your round durations</li>
+    <li>Use the "duck audio" feature to lower music volume during alerts</li>
+  </ul>
+  
+  <p class="mb-4">
+    [Add more details about audio features]
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">4. Use Session Logging for Progressive Overload (Premium Feature)</h2>
+  
+  <p class="mb-4">
+    Premium users can leverage the session logging feature to ensure they're consistently improving:
+  </p>
+  
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li>Track total work time per week and gradually increase it</li>
+    <li>Compare performance metrics across similar workouts</li>
+    <li>Use tags to organize sessions by focus area</li>
+    <li>Export your data to share with your coach</li>
+  </ul>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">5. Variable Round Times for Skill Development</h2>
+  
+  <p class="mb-4">
+    [Add content about using variable round times to focus on specific skills]
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">6. Partner Training Features</h2>
+  
+  <p class="mb-4">
+    [Add content about how to use the app for partner drills and coaching]
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">7. Integrate with Your Strength & Conditioning</h2>
+  
+  <p class="mb-4">
+    [Add content about using the timer for circuit training and S&C work]
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">8. Active Rest Periods</h2>
+  
+  <p class="mb-4">
+    [Add content about making the most of rest periods]
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">9. Screen Lock Mode</h2>
+  
+  <p class="mb-4">
+    [Add content about using the app with screen locked to save battery]
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">10. Combining Multiple Training Methods</h2>
+  
+  <p class="mb-4">
+    [Add content about creating comprehensive training plans]
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">Conclusion</h2>
+  
+  <p class="mb-4">
+    Boxing Timer Champ is designed to be flexible enough for any training style while remaining simple and intuitive. By applying these tips, you'll be able to customize your experience perfectly to your training needs and get maximum benefit from every workout.
+  </p>
+  
+  <p class="mb-4">
+    Have your own tips for getting the most out of Boxing Timer Champ? Share them with us on social media or through our contact form!
+  </p>
+  
+  <div class="my-8 text-center">
+    <a href="https://apps.apple.com/us/app/boxing-timer-champ/id6744783909" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors text-lg">
+      <i class="fab fa-apple mr-2"></i> Download Boxing Timer Champ
+    </a>
+  </div>
+</BlogLayout>

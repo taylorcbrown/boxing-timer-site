@@ -1,0 +1,105 @@
+---
+import Layout from './Layout.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  publishDate: string;
+  updatedDate?: string;
+  author?: string;
+  heroImage?: string;
+  alt?: string;
+}
+
+const { 
+  title, 
+  description, 
+  publishDate, 
+  updatedDate, 
+  author = "Boxing Timer Champ Team",
+  heroImage,
+  alt
+} = Astro.props;
+
+const formattedPublishDate = new Date(publishDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+
+const formattedUpdatedDate = updatedDate 
+  ? new Date(updatedDate).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  : null;
+---
+
+<Layout title={title} description={description}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <div class="mb-8">
+      {heroImage && (
+        <div class="mb-6">
+          <img 
+            src={heroImage} 
+            alt={alt || `Featured image for ${title}`} 
+            class="w-full rounded-lg shadow-lg object-cover max-h-96"
+          />
+        </div>
+      )}
+      
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">{title}</h1>
+      
+      <div class="flex flex-wrap items-center text-gray-400 mb-6">
+        <span class="mr-4 flex items-center">
+          <i class="fas fa-calendar-alt mr-2"></i>
+          <time datetime={publishDate}>{formattedPublishDate}</time>
+        </span>
+        
+        {formattedUpdatedDate && (
+          <span class="mr-4 flex items-center">
+            <i class="fas fa-edit mr-2"></i>
+            <time datetime={updatedDate}>Updated: {formattedUpdatedDate}</time>
+          </span>
+        )}
+        
+        <span class="flex items-center">
+          <i class="fas fa-user mr-2"></i>
+          {author}
+        </span>
+      </div>
+    </div>
+    
+    <div class="prose prose-invert max-w-none">
+      <slot />
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    'headline': title,
+    'description': description,
+    'image': heroImage,
+    'datePublished': publishDate,
+    'dateModified': updatedDate || publishDate,
+    'author': {
+      '@type': 'Person',
+      'name': author
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Boxing Timer Champ',
+      'logo': {
+        '@type': 'ImageObject',
+        'url': `${Astro.site?.origin || 'https://boxingtimerchamp.com'}/favicon.png`
+      }
+    },
+    'mainEntityOfPage': {
+      '@type': 'WebPage',
+      '@id': Astro.url.href
+    }
+  })}>
+  </script>
+</Layout>

@@ -1,0 +1,71 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+export const publishDate = '2025-04-23T09:00:00-07:00';
+export const heroImage = '/blog/app-launch-hero.jpg';
+
+// Add frontmatter properties for the blog index
+export const frontmatter = {
+  title: "Boxing Timer Champ: Now Available on the App Store",
+  description: "Introducing Boxing Timer Champ, the ultimate boxing round timer for serious fighters and coaches. Now available for download on the iOS App Store.",
+  publishDate: publishDate,
+  heroImage: heroImage,
+  alt: "Boxing Timer Champ App Launch"
+};
+---
+
+<BlogLayout
+  title="Boxing Timer Champ: Now Available on the App Store"
+  description="Introducing Boxing Timer Champ, the ultimate boxing round timer for serious fighters and coaches. Now available for download on the iOS App Store."
+  publishDate={publishDate}
+  heroImage={heroImage}
+  alt="Boxing Timer Champ App Launch"
+>
+  <p class="lead text-xl mb-6">
+    We're thrilled to announce that Boxing Timer Champ is now officially available on the App Store!
+  </p>
+  
+  <p class="mb-4">
+    After months of development and testing with professional boxers and coaches, we're proud to bring you what we believe is the most customizable, intuitive, and reliable boxing timer available for iOS. Whether you're a professional fighter, a coach, or a boxing enthusiast, Boxing Timer Champ is designed to enhance your training sessions with precision timing and customizable features.
+  </p>
+
+  <h2 class="text-2xl font-bold mt-8 mb-4">What Makes Boxing Timer Champ Different?</h2>
+  
+  <p class="mb-4">
+    Boxing Timer Champ was built from the ground up with a focus on what fighters and coaches actually need during training. Here's what sets us apart:
+  </p>
+  
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li><strong>Fully Customizable Rounds and Rest Periods:</strong> Set your own round duration, rest period, and number of rounds. Train exactly the way you want to.</li>
+    <li><strong>Audio and Visual Alerts:</strong> Customize warning alerts to prepare for round transitions. Never get caught off guard again.</li>
+    <li><strong>Clean, Distraction-Free UI:</strong> Large, easy-to-read timer display that's visible from across the gym.</li>
+    <li><strong>Reliable Performance:</strong> The timer runs perfectly in the background, even when your screen is locked.</li>
+    <li><strong>No Subscriptions:</strong> Boxing Timer Champ is a one-time purchase. No recurring fees, no hidden costs.</li>
+  </ul>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">Developed by Fighters, for Fighters</h2>
+  
+  <p class="mb-4">
+    As boxing enthusiasts ourselves, we created Boxing Timer Champ out of necessity. We couldn't find a timer app that met all our needs without unnecessary complications or subscriptions. So we built our own, focusing on the essentials while making sure every feature is polished to perfection.
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">Download Now</h2>
+  
+  <p class="mb-6">
+    Boxing Timer Champ is now available on the App Store for all iOS devices. We're committed to continuous improvement, so stay tuned for regular updates with new features based on user feedback.
+  </p>
+  
+  <div class="my-8 text-center">
+    <a href="https://apps.apple.com/us/app/boxing-timer-champ/id6744783909" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors text-lg">
+      <i class="fab fa-apple mr-2"></i> Download on the App Store
+    </a>
+  </div>
+  
+  <p class="mb-4">
+    We'd love to hear your thoughts and suggestions. Feel free to contact us with feedback or feature requests as we continue to refine and improve Boxing Timer Champ.
+  </p>
+  
+  <p class="text-gray-400 italic mt-8">
+    Thank you for your support, and happy training!
+  </p>
+</BlogLayout>

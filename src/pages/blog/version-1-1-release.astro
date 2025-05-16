@@ -1,0 +1,145 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+export const publishDate = '2025-05-16T08:00:00-07:00';
+export const heroImage = '/blog/version-1-1-hero.jpg';
+
+// Add frontmatter properties for the blog index
+export const frontmatter = {
+  title: "Boxing Timer Champ 1.1: Introducing Premium Features",
+  description: "Introducing version 1.1 of Boxing Timer Champ with new Premium subscription, session logging, ad-free experience, and more improvements.",
+  publishDate: publishDate,
+  heroImage: heroImage,
+  alt: "Boxing Timer Champ Version 1.1 Update - Premium Features"
+};
+---
+
+<BlogLayout
+  title="Boxing Timer Champ 1.1: Introducing Premium Features"
+  description="Introducing version 1.1 of Boxing Timer Champ with new Premium subscription, session logging, ad-free experience, and more improvements."
+  publishDate={publishDate}
+  heroImage={heroImage}
+  alt="Boxing Timer Champ Version 1.1 Update - Premium Features"
+>
+  <p class="lead text-xl mb-6">
+    We're excited to announce that Boxing Timer Champ version 1.1 is now available on the App Store! This major update introduces our new Premium subscription with exclusive features and several improvements requested by our community.
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">Introducing Boxing Timer Champ Premium</h2>
+  
+  <p class="mb-4">
+    With this update, we're introducing Boxing Timer Champ Premium, an optional subscription that unlocks advanced features for serious fighters and coaches who want more from their training timer.
+  </p>
+  
+  <div class="bg-elegant-secondary p-5 rounded-lg mb-6">
+    <h4 class="font-bold mb-2">Premium Features Include:</h4>
+    <ul class="list-disc pl-6 space-y-2">
+      <li><strong>Ad-Free Experience:</strong> Train without any distractions</li>
+      <li><strong>Session Logging:</strong> Track and analyze all your training sessions</li>
+      <li><strong>Coming Soon:</strong> Apple Watch support for remote control and heart rate monitoring</li>
+    </ul>
+  </div>
+  
+  <p class="mb-4">
+    The base version of Boxing Timer Champ remains free with all the core timing functionality you love. Premium is available as a monthly or annual subscription with a 7-day free trial.
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">What's New in Version 1.1</h2>
+  
+  <h3 class="text-xl font-bold mt-6 mb-3">Session Logging (Premium)</h3>
+  <p class="mb-4">
+    Keep track of your progress with our comprehensive training log:
+  </p>
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li><strong>Complete Session History:</strong> View all your past training sessions with detailed statistics</li>
+    <li><strong>Progress Tracking:</strong> Monitor your training volume and intensity over time</li>
+    <li><strong>Export Data:</strong> Share your training data with coaches or export it for your records</li>
+    <li><strong>Notes & Tags:</strong> Add comments and categorize your workouts for better organization</li>
+  </ul>
+  
+  <h3 class="text-xl font-bold mt-6 mb-3">Enhanced Interval Training</h3>
+  <p class="mb-4">
+    We've expanded the interval training options to give you even more control over your workouts:
+  </p>
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li><strong>Variable Round Times:</strong> Now you can set different durations for specific rounds, perfect for progressive intensity workouts</li>
+    <li><strong>Custom Rest Periods:</strong> Customize individual rest periods between specific rounds</li>
+    <li><strong>Interval Sets:</strong> Create and save interval patterns that you can repeat throughout your workout</li>
+  </ul>
+  
+  <h3 class="text-xl font-bold mt-6 mb-3">Improved Audio Alerts</h3>
+  <p class="mb-4">
+    We've refined the audio alert system to be more versatile and useful:
+  </p>
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li><strong>New Alert Sounds:</strong> Choose from a variety of new alert sounds including traditional boxing bells, whistles, and voice commands.</li>
+    <li><strong>Custom Warning Alerts:</strong> Set multiple warning alerts at specific times before the end of a round.</li>
+    <li><strong>Volume Control:</strong> Adjust the volume of alerts independently from your device volume.</li>
+  </ul>
+  
+  <h3 class="text-xl font-bold mt-6 mb-3">Performance Optimizations</h3>
+  <p class="mb-4">
+    We've made several under-the-hood improvements:
+  </p>
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li><strong>Reduced Battery Usage:</strong> The app now uses less battery during extended training sessions.</li>
+    <li><strong>Smoother Animations:</strong> The countdown animations are now smoother and more responsive.</li>
+    <li><strong>Improved Reliability:</strong> Fixed occasional timer drift that could occur during long sessions.</li>
+  </ul>
+  
+  <h3 class="text-xl font-bold mt-6 mb-3">User Interface Refinements</h3>
+  <p class="mb-4">
+    We've also made several UI improvements:
+  </p>
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li><strong>Dark Mode Enhancements:</strong> Improved color contrast in dark mode for better visibility in low-light gym environments.</li>
+    <li><strong>Workout Summary:</strong> A new post-workout summary screen shows your total work time, rest time, and round statistics.</li>
+    <li><strong>Quick Settings Access:</strong> Frequently used settings are now available directly from the main timer screen.</li>
+  </ul>
+  
+  <h3 class="text-xl font-bold mt-6 mb-3">Coming Soon to Premium</h3>
+  <p class="mb-4">
+    We're already working on the next wave of Premium features:
+  </p>
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li><strong>Apple Watch Support:</strong> Control your timer from your wrist and monitor your heart rate during training</li>
+    <li><strong>Custom Sound Packs:</strong> More alert sounds and voice prompts</li>
+    <li><strong>Training Programs:</strong> Pre-configured workout plans for different boxing disciplines</li>
+  </ul>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">Subscription Details</h2>
+  
+  <p class="mb-4">
+    Boxing Timer Champ Premium is available with the following options:
+  </p>
+  
+  <ul class="list-disc pl-6 mb-6 space-y-2">
+    <li><strong>Monthly:</strong> $2.99/month</li>
+    <li><strong>Annual:</strong> $19.99/year (over 40% savings)</li>
+    <li><strong>Free Trial:</strong> 7 days to try all Premium features before subscribing</li>
+  </ul>
+  
+  <p class="mb-4">
+    The core app functionality remains completely free for all users. Premium subscriptions help us continue development and add more advanced features.
+  </p>
+  
+  <h2 class="text-2xl font-bold mt-8 mb-4">User Feedback Matters</h2>
+  
+  <p class="mb-4">
+    Many of these improvements came directly from your feedback! We're committed to making Boxing Timer Champ the best training tool for fighters and coaches, and your input is invaluable to us.
+  </p>
+  
+  <p class="mb-6">
+    If you have any suggestions for future updates or notice any issues with the new version, please don't hesitate to contact us through the app or via our website.
+  </p>
+  
+  <div class="my-8 text-center">
+    <a href="https://apps.apple.com/us/app/boxing-timer-champ/id6744783909" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors text-lg">
+      <i class="fab fa-apple mr-2"></i> Update Now
+    </a>
+  </div>
+  
+  <p class="text-gray-400 italic mt-8">
+    Thanks for being part of the Boxing Timer Champ community. Happy training!
+  </p>
+</BlogLayout>
