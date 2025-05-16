@@ -1,0 +1,128 @@
+// Text Colors
+.text-brand {
+  color: $brand-primary;
+}
+
+.text-brand-dark {
+  color: $brand-primary-dark;
+}
+
+.text-brand-light {
+  color: $brand-primary-light;
+}
+
+.text-primary {
+  color: $text-primary;
+}
+
+.text-secondary {
+  color: $text-secondary;
+}
+
+.text-tertiary {
+  color: $text-tertiary;
+}
+
+// Background Colors
+.bg-brand {
+  background-color: $brand-primary;
+}
+
+.bg-brand-dark {
+  background-color: $brand-primary-dark;
+}
+
+.bg-brand-light {
+  background-color: $brand-primary-light;
+}
+
+.bg-dark {
+  background-color: $bg-dark;
+}
+
+.bg-card {
+  background-color: $bg-card;
+}
+
+.bg-card-secondary {
+  background-color: $bg-card-secondary;
+}
+
+// Border utilities
+.border-brand {
+  border-color: $brand-primary;
+}
+
+.border-light {
+  border-color: $border-primary;
+}
+
+// Spacing utilities
+.section-padding {
+  @include section-padding;
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  
+  @include md {
+    padding: 0 $spacing-lg;
+  }
+  
+  @include lg {
+    padding: 0 $spacing-xl;
+  }
+}
+
+// Flexbox utilities
+.flex-center {
+  @include flex-center;
+}
+
+.flex-between {
+  @include flex-between;
+}
+
+.flex-column {
+  @include flex-column;
+}
+
+// Cards
+.card {
+  @include card;
+}
+
+// Interactive states
+.hover-lift {
+  transition: transform $transition-quick ease-in-out;
+  
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.hover-brand {
+  transition: color $transition-quick ease-in-out;
+  
+  &:hover {
+    color: $brand-primary;
+  }
+}
+
+// Text utilities
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.font-bold {
+  font-weight: $font-weight-bold;
+}
+
+.font-medium {
+  font-weight: $font-weight-medium;
+}

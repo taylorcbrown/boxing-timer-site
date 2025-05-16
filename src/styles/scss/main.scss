@@ -1,0 +1,68 @@
+/**
+ * Boxing Timer Champ - Main Stylesheet
+ */
+
+// Tailwind Directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Import base styles first (no dependencies)
+@import './base/_reset';
+@import './base/_typography';
+
+// Brand Colors - Define here to avoid import issues
+$brand-primary: #30d158;
+$brand-primary-dark: #28b34a;
+$brand-primary-light: #4ddd77;
+
+// Background Colors
+$bg-dark: #121212;
+$bg-card: #222;
+$bg-card-secondary: #181818;
+$bg-footer: #0e0e0e;
+
+// Text Colors
+$text-primary: #ffffff;
+$text-secondary: rgba(255, 255, 255, 0.8);
+$text-tertiary: rgba(255, 255, 255, 0.6);
+
+// Border Colors
+$border-primary: rgba(255, 255, 255, 0.1);
+$border-secondary: rgba(255, 255, 255, 0.05);
+
+// Utility Classes
+.text-brand { color: $brand-primary; }
+.bg-brand { background-color: $brand-primary; }
+.border-brand { border-color: $brand-primary; }
+
+.text-brand-dark { color: $brand-primary-dark; }
+.bg-brand-dark { background-color: $brand-primary-dark; }
+
+.text-brand-light { color: $brand-primary-light; }
+.bg-brand-light { background-color: $brand-primary-light; }
+
+// Common Components
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-brand {
+  background-color: $brand-primary;
+  color: $bg-dark;
+  
+  &:hover {
+    background-color: $brand-primary-dark;
+  }
+}
+
+.card {
+  background-color: $bg-card;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

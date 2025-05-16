@@ -6,6 +6,12 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Brand colors
+        green: {
+          400: '#4ddd77', // brand-primary-light
+          500: '#30d158', // brand-primary
+          600: '#28b34a', // brand-primary-dark
+        },
         // Primary colors (minimal, elegant scheme)
         primary: {
           50: '#f8fafc',
@@ -45,35 +51,34 @@ export default {
           DEFAULT: '#FFC300', // goldenrod main
           dark: '#FFB300', // goldenrod dark accent
         },
-        // Dark neutral theme
+        // Elegant theme colors
         elegant: {
-          // Backgrounds
-          primary: '#121212',
-          secondary: '#1a1a1a',
-          tertiary: '#242424',
-          // Text
+          primary: '#121212', // main background
+          secondary: '#1e1e1e', // secondary backgrounds
+          tertiary: '#2d2d2d', // card headers
           text: {
-            primary: '#ffffff',
-            secondary: '#e5e7eb',
-            tertiary: '#d1d5db',
-            muted: '#9ca3af',
+            primary: '#FFFFFF', // main text
+            secondary: 'rgba(255, 255, 255, 0.8)', // subdued text
+            tertiary: 'rgba(255, 255, 255, 0.6)', // muted text
           },
-          // Borders
           border: {
-            primary: '#333333',
-            secondary: '#444444',
+            primary: 'rgba(255, 255, 255, 0.1)', // subtle borders
+            secondary: 'rgba(255, 255, 255, 0.05)', // more subtle borders
           },
-          // Card backgrounds
           card: {
-            primary: '#1a1a1a',
-            secondary: '#242424',
+            primary: '#222222',
+            secondary: '#181818',
           },
-          // Interactive elements
-          hover: {
-            primary: '#2c2c2c',
-            secondary: '#3c3c3c',
-          },
+          highlight: '#30d158', // accent color (green)
         },
+        // Direct brand color references
+        'brand': '#30d158',
+        'brand-dark': '#28b34a',
+        'brand-light': '#4ddd77',
+        'bg-dark': '#121212',
+        'bg-card': '#222222',
+        'bg-card-secondary': '#181818',
+        'bg-footer': '#0e0e0e',
       },
       backgroundColor: {
         'hero': '#121212',

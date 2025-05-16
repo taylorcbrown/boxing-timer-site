@@ -1,0 +1,82 @@
+/* Typography Styles */
+
+h1 {
+  font-size: 2.5rem;
+  
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  
+  @media (min-width: 768px) {
+    font-size: 1.75rem;
+  }
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.heading-brand {
+  color: #30d158;
+}
+
+.lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+code, pre {
+  font-family: monospace;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+code {
+  padding: 2px 4px;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+blockquote {
+  border-left: 4px solid #30d158;
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}

@@ -2,6 +2,7 @@
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import '../styles/scss/main.scss';
 
 const { title, description = "Boxing Timer Champ - The best boxing round timer for serious training. Customize your workout with adjustable rounds, rest periods, and alerts.", breadcrumbs, showBreadcrumbs = true } = Astro.props;
 const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
@@ -87,61 +88,6 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
 		{!isLocalhost && (
 			<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/746be0fcd3798bc5bf52a785/script.js"></script>
 		)}
-		
-		<style>
-		  /* Sticky footer styles */
-		  html {
-		    height: 100%;
-		  }
-
-		  body {
-		    min-height: 100%;
-		    display: flex;
-		    flex-direction: column;
-		    background-color: #121212;
-		    color: #f1f5f9;
-		  }
-
-		  .content-wrapper {
-		    flex: 1;
-		    padding-bottom: 2rem;
-		  }
-
-		  /* Navigation styles */
-		  .nav-link {
-		    @apply text-gray-300 hover:text-white;
-		  }
-
-		  /* Button styles */
-		  .btn-primary {
-		    @apply bg-green-500 text-white hover:bg-green-600;
-		  }
-
-		  /* Card styles */
-		  .card {
-		    @apply bg-elegant-card-primary text-white;
-		  }
-
-		  /* Form styles */
-		  .form-input {
-		    @apply bg-elegant-secondary text-white;
-		  }
-
-		  /* Heading styles */
-		  h1, h2, h3, h4, h5, h6 {
-		    @apply text-white;
-		  }
-
-		  /* Link styles */
-		  a {
-		    @apply text-gray-300 hover:text-white;
-		  }
-
-		  /* Border styles */
-		  .border {
-		    @apply border-elegant-border-primary;
-		  }
-		</style>
 	</head>
 	<body>
 		<!-- Google Tag Manager (noscript) -->

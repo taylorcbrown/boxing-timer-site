@@ -1,0 +1,56 @@
+/* Button Styles */
+
+.btn {
+  display: inline-block;
+  padding: $spacing-md $spacing-xl;
+  font-size: 1rem;
+  font-weight: $font-weight-bold;
+  border-radius: $border-radius-md;
+  text-align: center;
+  cursor: pointer;
+  @include transition(all);
+  
+  &:focus {
+    @include focus-ring;
+  }
+}
+
+.btn-brand {
+  color: $bg-dark;
+  background-color: $brand-primary;
+  
+  &:hover {
+    background-color: $brand-primary-dark;
+    color: $bg-dark;
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid $brand-primary;
+  color: $brand-primary;
+  
+  &:hover {
+    background-color: $brand-primary;
+    color: $bg-dark;
+  }
+}
+
+.cta-button {
+  @extend .btn;
+  @extend .btn-brand;
+  padding: $spacing-md $spacing-xl;
+  border-radius: $border-radius-md;
+  font-weight: $font-weight-bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
