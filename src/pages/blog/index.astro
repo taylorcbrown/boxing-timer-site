@@ -87,10 +87,17 @@ const processedPosts: BlogPost[] = allPosts
     return true;
   })
   .sort((a: BlogPost, b: BlogPost) => {
-    // Sort by date (newest first)
-    return new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf();
+    const dateA = new Date(a.publishDate).valueOf();
+    const dateB = new Date(b.publishDate).valueOf();
+    console.log(`Sorting: ${a.title} (${a.publishDate}) vs ${b.title} (${b.publishDate})`);
+    console.log(`Dates: ${dateA} vs ${dateB}, diff: ${dateB - dateA}`);
+    return dateB - dateA; // Newest first
   });
 
+console.log('Final post order:');
+processedPosts.forEach((post, index) => {
+  console.log(`${index + 1}. ${post.title} - ${post.publishDate}`);
+});
 console.log(`Found ${processedPosts.length} published posts`);
 ---
 
@@ -99,14 +106,14 @@ console.log(`Found ${processedPosts.length} published posts`);
   description="Latest news, tips, and updates about Boxing Timer Champ - the best boxing round timer app for serious training."
   breadcrumbs={[{ label: 'Blog', href: '/blog' }]}
 >
-  <div class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold mb-8">Boxing Timer Champ Blog</h1>
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-6">Boxing Timer Champ Blog</h1>
     
-    <p class="text-gray-300 mb-12">
+    <p class="text-gray-300 mb-10">
       Stay up to date with the latest news, features, tips and tricks for getting the most out of Boxing Timer Champ.
     </p>
     
-    <div class="max-w-3xl mx-auto space-y-10">
+    <div class="space-y-10">
       {processedPosts.length === 0 ? (
         <div class="text-center py-12">
           <p class="text-gray-400 text-lg">No blog posts found. Check back soon!</p>
@@ -128,12 +135,12 @@ console.log(`Found ${processedPosts.length} published posts`);
                   <img 
                     src={post.heroImage} 
                     alt={post.alt || `Featured image for ${post.title}`}
-                    class="w-full h-64 object-cover"
+                    class="w-full h-64 object-cover object-center"
                   />
                 </a>
               )}
               
-              <div class="p-8">
+              <div class="p-6">
                 <h2 class="text-3xl font-bold mb-4">
                   <a href={post.url} class="hover:text-green-500 transition-colors">
                     {post.title}
