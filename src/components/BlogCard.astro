@@ -1,0 +1,69 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  publishDate: string;
+  url: string;
+  heroImage?: string;
+  alt?: string;
+  compact?: boolean;
+}
+
+const { 
+  title, 
+  description, 
+  publishDate, 
+  url, 
+  heroImage, 
+  alt = "", 
+  compact = false 
+} = Astro.props;
+
+// Format the date
+const formattedDate = publishDate 
+  ? new Date(publishDate).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  : '';
+---
+
+<article class={`bg-elegant-card-primary rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-[1.01] hover:shadow-xl ${compact ? 'h-full flex flex-col' : ''}`}>
+  {heroImage && (
+    <a href={url} class="block">
+      <div class="relative pb-[56.25%] w-full overflow-hidden">
+        <img 
+          src={heroImage} 
+          alt={alt || `Featured image for ${title}`}
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </a>
+  )}
+  
+  <div class={`p-6 ${compact ? 'flex-grow flex flex-col' : ''}`}>
+    <h3 class={`font-bold mb-2 hover:text-green-500 transition-colors ${compact ? 'text-xl' : 'text-2xl'}`}>
+      <a href={url}>
+        {title}
+      </a>
+    </h3>
+    
+    {formattedDate && (
+      <div class="flex items-center text-gray-400 text-sm mb-3">
+        <i class="fas fa-calendar-alt mr-2"></i>
+        <time datetime={publishDate}>{formattedDate}</time>
+      </div>
+    )}
+    
+    <p class={`text-elegant-text-secondary ${compact ? 'text-sm mb-4 flex-grow' : 'mb-6'}`}>
+      {description}
+    </p>
+    
+    <a href={url} class="inline-flex items-center text-green-500 hover:text-green-400 hover:underline">
+      Read more
+      <i class="fas fa-arrow-right ml-2 text-xs"></i>
+    </a>
+  </div>
+</article>
