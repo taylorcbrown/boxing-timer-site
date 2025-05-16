@@ -19,7 +19,13 @@ interface AstroFile {
 }
 
 // Get all blog post files
-const allPosts = (await Astro.glob('./*.astro')) as AstroFile[];
+const blogEntries = import.meta.glob<{ frontmatter: Partial<BlogPost> }>('./*.astro');
+const allPosts = await Promise.all(
+  Object.entries(blogEntries).map(async ([path, importFunc]) => {
+    const post = await importFunc();
+    return { file: path, frontmatter: post.frontmatter } as AstroFile;
+  })
+);
 
 // For debugging - log what we're finding
 console.log(`Found ${allPosts.length} total posts`);

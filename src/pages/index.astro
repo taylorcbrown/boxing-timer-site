@@ -17,7 +17,13 @@ interface BlogPost {
 }
 
 // Get all blog post files
-const allPosts = await Astro.glob('./blog/*.astro');
+const blogEntries = import.meta.glob<{ frontmatter: any }>('./blog/*.astro');
+const allPosts = await Promise.all(
+  Object.entries(blogEntries).map(async ([path, importFunc]) => {
+    const post = await importFunc();
+    return { frontmatter: post.frontmatter, file: path };
+  })
+);
 
 // Type for the raw Astro file import
 interface AstroFile {
