@@ -94,7 +94,11 @@ const processedPosts: BlogPost[] = allPosts
 console.log(`Found ${processedPosts.length} published posts`);
 ---
 
-<Layout title="Blog | Boxing Timer Champ" description="Latest news, tips, and updates about Boxing Timer Champ - the best boxing round timer app for serious training.">
+<Layout 
+  title="Blog | Boxing Timer Champ" 
+  description="Latest news, tips, and updates about Boxing Timer Champ - the best boxing round timer app for serious training."
+  breadcrumbs={[{ label: 'Blog', href: '/blog' }]}
+>
   <div class="max-w-4xl mx-auto px-4 py-12">
     <h1 class="text-4xl font-bold mb-8">Boxing Timer Champ Blog</h1>
     

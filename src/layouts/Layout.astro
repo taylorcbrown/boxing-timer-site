@@ -1,9 +1,11 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
-const { title, description = "Boxing Timer Champ - The best boxing round timer for serious training. Customize your workout with adjustable rounds, rest periods, and alerts." } = Astro.props;
+const { title, description = "Boxing Timer Champ - The best boxing round timer for serious training. Customize your workout with adjustable rounds, rest periods, and alerts.", breadcrumbs, showBreadcrumbs = true } = Astro.props;
 const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
+const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html';
 ---
 
 <!doctype html>
@@ -151,6 +153,9 @@ const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname ===
 		
 		<div class="content-wrapper">
 		  <Navigation />
+		  {showBreadcrumbs && !isHomepage && breadcrumbs && (
+		    <Breadcrumbs breadcrumbs={breadcrumbs.slice(0, -1)} currentPage={breadcrumbs[breadcrumbs.length - 1]?.label || title} />
+		  )}
 		  <slot />
 		</div>
 		<Footer />

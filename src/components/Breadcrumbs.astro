@@ -1,0 +1,61 @@
+---
+export interface Breadcrumb {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  breadcrumbs: Breadcrumb[];
+  currentPage: string;
+}
+
+const { breadcrumbs, currentPage } = Astro.props;
+const fullBreadcrumbs = [
+  { label: 'Home', href: '/' },
+  ...breadcrumbs,
+];
+---
+
+<div class="max-w-7xl mx-auto px-4 py-4 text-left">
+  <nav class="text-sm" aria-label="Breadcrumb">
+    <ol class="list-none p-0 inline-flex flex-wrap items-center">
+      {fullBreadcrumbs.map((crumb, index) => (
+        <li class="flex items-center">
+          {index > 0 && (
+            <span class="mx-2 text-gray-400">/</span>
+          )}
+          <a
+            href={crumb.href}
+            class={`hover:text-green-500 transition-colors ${
+              index === fullBreadcrumbs.length - 1 ? "font-semibold" : ""
+            }`}
+          >
+            {crumb.label}
+          </a>
+        </li>
+      ))}
+      <li class="flex items-center">
+        <span class="mx-2 text-gray-400">/</span>
+        <span class="text-gray-600 font-semibold">{currentPage}</span>
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    ...fullBreadcrumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": crumb.label,
+      "item": new URL(crumb.href, Astro.url).href
+    })),
+    {
+      "@type": "ListItem",
+      "position": fullBreadcrumbs.length + 1,
+      "name": currentPage
+    }
+  ]
+})}></script>

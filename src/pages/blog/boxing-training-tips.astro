@@ -2,7 +2,8 @@
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
 export const publishDate = '2025-05-15T14:00:00-07:00';
-export const heroImage = '/blog/boxing-tips-hero.jpg';
+export const heroImage = '/images/blog-placeholders/boxing-tips-hero.svg';
+export const isDraft = true;
 
 // Add frontmatter properties for the blog index
 export const frontmatter = {
@@ -10,7 +11,8 @@ export const frontmatter = {
   description: "Maximize your boxing workouts with these professional tips and tricks using the Boxing Timer Champ app to structure your training sessions effectively.",
   publishDate: publishDate,
   heroImage: heroImage,
-  alt: "Boxing training tips with Boxing Timer Champ"
+  alt: "Boxing training tips with Boxing Timer Champ",
+  isDraft: isDraft
 };
 ---
 
