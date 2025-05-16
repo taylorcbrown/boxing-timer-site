@@ -1,0 +1,40 @@
+---
+// Accordion.astro - container component
+const { class: className } = Astro.props;
+---
+
+<div class={`space-y-4 ${className || ''}`}>
+  <slot />
+</div>
+
+<script>
+  // Initialize all accordion items
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.accordion-item').forEach((item) => {
+      const header = item.querySelector('.accordion-header');
+      const content = item.querySelector('.accordion-content');
+      const icon = item.querySelector('.accordion-icon');
+      
+      if (header && content && icon) {
+        header.addEventListener('click', () => {
+          // Toggle the active state
+          const isExpanded = header.getAttribute('aria-expanded') === 'true';
+          
+          // Update ARIA attributes
+          header.setAttribute('aria-expanded', (!isExpanded).toString());
+          
+          // Toggle visibility of content
+          if (isExpanded) {
+            content.classList.add('hidden');
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+          } else {
+            content.classList.remove('hidden');
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+          }
+        });
+      }
+    });
+  });
+</script>

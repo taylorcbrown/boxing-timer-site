@@ -1,0 +1,26 @@
+---
+export interface Props {
+  title: string;
+  startOpen?: boolean;
+}
+
+const { title, startOpen = false } = Astro.props;
+---
+
+<div class="accordion-item bg-elegant-card-secondary rounded-lg overflow-hidden border border-elegant-border-primary">
+  <button
+    class="accordion-header w-full text-left p-5 flex justify-between items-center"
+    aria-expanded={startOpen ? 'true' : 'false'}
+  >
+    <h3 class="text-lg font-medium">{title}</h3>
+    <i class={`accordion-icon fas ${startOpen ? 'fa-minus' : 'fa-plus'} text-green-500`}></i>
+  </button>
+  
+  <div 
+    class={`accordion-content overflow-hidden transition-all duration-300 ${startOpen ? '' : 'hidden'}`}
+  >
+    <div class="p-5 pt-0">
+      <slot />
+    </div>
+  </div>
+</div>

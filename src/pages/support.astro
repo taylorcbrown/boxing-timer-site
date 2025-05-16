@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Accordion from '../components/Accordion.astro';
+import AccordionItem from '../components/AccordionItem.astro';
+---
+
+<Layout 
+  title="Support - Boxing Timer Champ" 
+  description="Get help with the Boxing Timer Champ app. Find answers to common questions, troubleshooting tips, and contact information for further assistance."
+  breadcrumbs={[{ label: 'Support', href: '/support' }]}
+>
+  <main class="w-full max-w-4xl mx-auto px-4 md:px-8 py-8">
+    <div class="space-y-8">
+      <div>
+        <h1 class="text-4xl font-bold text-green-500 mb-4">Support Center</h1>
+        <p class="text-elegant-text-secondary text-lg mb-8">
+          Get help with Boxing Timer Champ. Browse our FAQs, troubleshooting guides, or contact us directly.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <a href="#faq" class="bg-elegant-card-primary p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-elegant-border-primary text-center">
+          <i class="fas fa-question-circle text-green-500 text-3xl mb-3"></i>
+          <h3 class="text-xl font-semibold mb-2">Frequently Asked Questions</h3>
+          <p class="text-elegant-text-secondary">Find answers to common questions</p>
+        </a>
+        
+        <a href="#troubleshooting" class="bg-elegant-card-secondary p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-elegant-border-primary text-center">
+          <i class="fas fa-tools text-green-500 text-3xl mb-3"></i>
+          <h3 class="text-xl font-semibold mb-2">Troubleshooting</h3>
+          <p class="text-elegant-text-secondary">Solve common issues and technical problems</p>
+        </a>
+        
+        <a href="/contact" class="bg-elegant-card-primary p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-elegant-border-primary text-center">
+          <i class="fas fa-headset text-green-500 text-3xl mb-3"></i>
+          <h3 class="text-xl font-semibold mb-2">Contact Support</h3>
+          <p class="text-elegant-text-secondary">Get in touch with our support team</p>
+        </a>
+      </div>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="pt-4">
+        <h2 class="text-3xl font-bold text-green-500 mb-6">Frequently Asked Questions</h2>
+        
+        <Accordion>
+          <AccordionItem title="How do I set up custom round times?">
+            <p class="text-elegant-text-secondary mb-3">
+              To set up custom round times in Boxing Timer Champ:
+            </p>
+            <ol class="list-decimal ml-6 space-y-2 text-elegant-text-secondary">
+              <li>Open the app and tap on the "Settings" icon in the main screen</li>
+              <li>Select "Timer Settings" from the menu</li>
+              <li>Tap "Round Length" and adjust to your desired time</li>
+              <li>Tap "Rest Period" to set your rest time between rounds</li>
+              <li>Use the "Save" button to create a preset for future use</li>
+            </ol>
+          </AccordionItem>
+          
+          <AccordionItem title="Does the app work in the background?">
+            <p class="text-elegant-text-secondary">
+              Yes! Boxing Timer Champ is designed to work in the background. You'll continue to hear audio alerts even when using other apps or when your phone is locked. For optimal performance, make sure that:
+            </p>
+            <ul class="list-disc ml-6 mt-3 space-y-2 text-elegant-text-secondary">
+              <li>Your device's sound is turned on</li>
+              <li>Battery optimization is disabled for the app</li>
+              <li>Background app refresh is enabled in your iOS settings</li>
+            </ul>
+          </AccordionItem>
+          
+          <AccordionItem title="How do I restore my Premium subscription?">
+            <p class="text-elegant-text-secondary">
+              If you've previously purchased a Premium subscription and need to restore it:
+            </p>
+            <ol class="list-decimal ml-6 mt-3 space-y-2 text-elegant-text-secondary">
+              <li>Open the app and go to the Premium subscription page</li>
+              <li>Tap the "Restore Purchases" button at the bottom of the screen</li>
+              <li>Sign in with the same Apple ID that was used for the original purchase</li>
+              <li>Your subscription will be restored automatically if it's still valid</li>
+            </ol>
+            <p class="text-elegant-text-secondary mt-3">
+              If you're still experiencing issues after following these steps, please contact our support team with your purchase receipt.
+            </p>
+          </AccordionItem>
+          
+          <AccordionItem title="What's the difference between the free and Premium versions?">
+            <p class="text-elegant-text-secondary mb-3">
+              Boxing Timer Champ offers two versions:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+              <div class="bg-elegant-card-primary p-4 rounded-lg">
+                <h4 class="text-lg font-semibold mb-2">Free Version</h4>
+                <ul class="list-disc ml-6 space-y-1 text-elegant-text-secondary">
+                  <li>Basic round timer functionality</li>
+                  <li>Standard audio alerts</li>
+                  <li>Limited round presets</li>
+                  <li>Ad-supported experience</li>
+                </ul>
+              </div>
+              
+              <div class="bg-gradient-to-r from-applegreen-gradientFrom to-applegreen-gradientTo p-4 rounded-lg">
+                <h4 class="text-lg font-semibold mb-2">Premium Version ($4.99)</h4>
+                <ul class="list-disc ml-6 space-y-1 text-white">
+                  <li>Ad-free experience</li>
+                  <li>Unlimited custom presets</li>
+                  <li>Enhanced sound options</li>
+                  <li>Session logging and statistics</li>
+                  <li>Dark mode UI</li>
+                  <li>Background mode</li>
+                </ul>
+              </div>
+            </div>
+          </AccordionItem>
+          
+          <AccordionItem title="Can I use the app for training other than boxing?">
+            <p class="text-elegant-text-secondary">
+              Absolutely! While Boxing Timer Champ is optimized for boxing workouts, it's perfect for any interval-based training including:
+            </p>
+            <ul class="list-disc ml-6 mt-3 space-y-2 text-elegant-text-secondary">
+              <li>MMA and combat sports</li>
+              <li>HIIT workouts</li>
+              <li>Circuit training</li>
+              <li>Tabata sessions</li>
+              <li>Any workout that requires timed intervals</li>
+            </ul>
+            <p class="text-elegant-text-secondary mt-3">
+              The flexible timer settings allow you to adapt to virtually any training protocol.
+            </p>
+          </AccordionItem>
+        </Accordion>
+      </section>
+      
+      <!-- Troubleshooting Section -->
+      <section id="troubleshooting" class="pt-8">
+        <h2 class="text-3xl font-bold text-green-500 mb-6">Troubleshooting</h2>
+        
+        <Accordion>
+          <AccordionItem title="The app is not playing sound alerts">
+            <div class="space-y-4 text-elegant-text-secondary">
+              <p>If you're not hearing sound alerts during your workout, try these solutions:</p>
+              
+              <div>
+                <h4 class="font-semibold mb-2">Check your device settings:</h4>
+                <ul class="list-disc ml-6 space-y-2">
+                  <li>Make sure your device is not on silent/mute mode</li>
+                  <li>Check that your volume is turned up</li>
+                  <li>Verify that you haven't disabled notifications for the app</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold mb-2">Check app settings:</h4>
+                <ul class="list-disc ml-6 space-y-2">
+                  <li>Open the app settings and ensure sound alerts are enabled</li>
+                  <li>Try selecting a different sound option in the alert settings</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold mb-2">Restart and update:</h4>
+                <ul class="list-disc ml-6 space-y-2">
+                  <li>Close and restart the app</li>
+                  <li>Check if your app is updated to the latest version</li>
+                  <li>Restart your device</li>
+                </ul>
+              </div>
+            </div>
+          </AccordionItem>
+          
+          <AccordionItem title="The timer stops when my phone screen is locked">
+            <div class="space-y-4 text-elegant-text-secondary">
+              <p>To ensure Boxing Timer Champ continues to work with your screen locked:</p>
+              
+              <div>
+                <h4 class="font-semibold mb-2">Update your settings:</h4>
+                <ol class="list-decimal ml-6 space-y-2">
+                  <li>Go to your iOS Settings > Battery</li>
+                  <li>Disable Low Power Mode if it's enabled</li>
+                  <li>Go to Settings > General > Background App Refresh</li>
+                  <li>Make sure Background App Refresh is enabled for Boxing Timer Champ</li>
+                </ol>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold mb-2">For Premium users:</h4>
+                <ul class="list-disc ml-6 space-y-2">
+                  <li>Enable "Background Mode" in the app settings</li>
+                  <li>This feature is only available in the Premium version</li>
+                </ul>
+              </div>
+            </div>
+          </AccordionItem>
+          
+          <AccordionItem title="I'm experiencing crashes or freezes">
+            <div class="space-y-4 text-elegant-text-secondary">
+              <p>If the app is crashing or freezing, try these troubleshooting steps:</p>
+              
+              <ol class="list-decimal ml-6 space-y-2">
+                <li>Force close the app and restart it</li>
+                <li>Update to the latest version from the App Store</li>
+                <li>Restart your device</li>
+                <li>Check that you have sufficient storage space on your device</li>
+                <li>If problems persist, try uninstalling and reinstalling the app (Premium users should first ensure their Apple ID is noted to restore purchases)</li>
+              </ol>
+              
+              <p class="mt-3">If none of these solutions work, please contact our support team with details about your device model and iOS version.</p>
+            </div>
+          </AccordionItem>
+        </Accordion>
+      </section>
+      
+      <!-- App Information Section -->
+      <section class="pt-8">
+        <h2 class="text-3xl font-bold text-green-500 mb-6">App Information</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-elegant-card-primary rounded-lg p-6 border border-elegant-border-primary">
+            <h3 class="text-xl font-semibold mb-4">App Details</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between">
+                <span class="text-elegant-text-tertiary">Current Version</span>
+                <span class="font-medium">1.1.0</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-elegant-text-tertiary">Released</span>
+                <span class="font-medium">May 12, 2025</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-elegant-text-tertiary">Size</span>
+                <span class="font-medium">24 MB</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-elegant-text-tertiary">Compatibility</span>
+                <span class="font-medium">iOS 15.0 or later</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-elegant-text-tertiary">Languages</span>
+                <span class="font-medium">English</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-elegant-text-tertiary">Developer</span>
+                <span class="font-medium">Boxing Timer Champ LLC</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-elegant-card-primary rounded-lg p-6 border border-elegant-border-primary">
+            <h3 class="text-xl font-semibold mb-4">Need More Help?</h3>
+            <p class="text-elegant-text-secondary mb-4">
+              If you couldn't find the answer to your question, our support team is ready to help.
+            </p>
+            <div class="space-y-4">
+              <a href="/contact" class="flex items-center text-green-500 hover:text-green-400 hover:underline">
+                <i class="fas fa-envelope mr-2"></i>
+                Contact Support Team
+              </a>
+              <a href="https://twitter.com/boxingtimerchamp" class="flex items-center text-green-500 hover:text-green-400 hover:underline">
+                <i class="fab fa-twitter mr-2"></i>
+                @boxingtimerchamp
+              </a>
+              <a href="https://instagram.com/boxingtimerchamp" class="flex items-center text-green-500 hover:text-green-400 hover:underline">
+                <i class="fab fa-instagram mr-2"></i>
+                @boxingtimerchamp
+              </a>
+            </div>
+            <div class="mt-6 pt-6 border-t border-elegant-border-primary">
+              <p class="text-elegant-text-tertiary text-sm">
+                Average response time: <span class="font-medium text-white">24 hours</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>
