@@ -112,16 +112,18 @@ console.log(`Found ${processedPosts.length} published posts`);
   description="Latest news, tips, and updates about Boxing Timer Champ - the best boxing round timer app for serious training."
   breadcrumbs={[{ label: 'Blog', href: '/blog' }]}
 >
-  <div class="max-w-4xl mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold mb-6">Boxing Timer Champ Blog</h1>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">Boxing Timer Champ Blog</h1>
+      
+      <p class="text-xl text-elegant-text-secondary max-w-3xl mx-auto">
+        Stay up to date with the latest news, features, and tips for Boxing Timer Champ.
+      </p>
+    </header>
     
-    <p class="text-gray-300 mb-10">
-      Stay up to date with the latest news, features, tips and tricks for getting the most out of Boxing Timer Champ.
-    </p>
-    
-    <div class="space-y-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
       {processedPosts.length === 0 ? (
-        <div class="text-center py-12">
+        <div class="text-center py-12 col-span-2">
           <p class="text-gray-400 text-lg">No blog posts found. Check back soon!</p>
         </div>
       ) : (
@@ -135,25 +137,30 @@ console.log(`Found ${processedPosts.length} published posts`);
             : 'No date';
           
           return (
-            <article class="bg-elegant-card-primary rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-[1.01] hover:shadow-xl">
+            <article class="bg-elegant-card-primary rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-[1.01] hover:shadow-xl h-full flex flex-col">
               {post.heroImage && (
                 <a href={post.url} class="block">
-                  <img 
-                    src={post.heroImage} 
-                    alt={post.alt || `Featured image for ${post.title}`}
-                    class="w-full h-64 object-cover object-center"
-                  />
+                  <div class="relative pb-[56.25%] w-full overflow-hidden">
+                    <img 
+                      src={post.heroImage} 
+                      alt={post.alt || `Featured image for ${post.title}`}
+                      class="absolute inset-0 w-full h-full object-cover object-center"
+                      width="1600"
+                      height="900"
+                      loading="lazy"
+                    />
+                  </div>
                 </a>
               )}
               
-              <div class="p-6">
-                <h2 class="text-3xl font-bold mb-4">
+              <div class="p-6 flex-grow flex flex-col">
+                <h2 class="text-2xl font-bold mb-3">
                   <a href={post.url} class="hover:text-green-500 transition-colors">
                     {post.title}
                   </a>
                 </h2>
                 
-                <div class="flex items-center text-gray-400 mb-6">
+                <div class="flex items-center text-gray-400 mb-4">
                   <span class="flex items-center">
                     <i class="fas fa-calendar-alt mr-2"></i>
                     <time datetime={post.publishDate || ''} class="text-sm">
@@ -162,23 +169,78 @@ console.log(`Found ${processedPosts.length} published posts`);
                   </span>
                 </div>
                 
-                {post.description && (
-                  <p class="text-gray-300 mb-6 text-lg">
-                    {post.description}
-                  </p>
-                )}
+                <p class="text-elegant-text-secondary mb-4 flex-grow">
+                  {post.description}
+                </p>
                 
-                <a href={post.url} class="inline-flex items-center text-green-500 hover:text-green-400 font-semibold group">
-                  Read More 
-                  <span class="ml-2 group-hover:translate-x-1 transition-transform">
-                    <i class="fas fa-arrow-right"></i>
-                  </span>
+                <a href={post.url} class="inline-flex items-center text-green-500 hover:text-green-400 hover:underline mt-2">
+                  Read more
+                  <i class="fas fa-arrow-right ml-2 text-xs"></i>
                 </a>
               </div>
             </article>
           );
         })
       )}
+    </div>
+    
+    <section class="bg-elegant-card-secondary rounded-xl p-8 shadow-lg mb-12">
+      <h2 class="text-2xl font-bold mb-4">About The Blog</h2>
+      
+      <div class="text-elegant-text-secondary space-y-4">
+        <p>
+          This blog is a resource for Boxing Timer Champ and boxing training topics. Here's what you can expect to find:
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div class="bg-elegant-card-primary p-5 rounded-lg">
+            <h3 class="text-xl font-semibold mb-2 flex items-center">
+              <i class="fas fa-bullhorn mr-3 text-green-500"></i>
+              Product Updates
+            </h3>
+            <p class="text-elegant-text-tertiary">
+              Stay informed about new features, version releases, and improvements to the Boxing Timer Champ app.
+            </p>
+          </div>
+          
+          <div class="bg-elegant-card-primary p-5 rounded-lg">
+            <h3 class="text-xl font-semibold mb-2 flex items-center">
+              <i class="fas fa-lightbulb mr-3 text-green-500"></i>
+              Training Tips
+            </h3>
+            <p class="text-elegant-text-tertiary">
+              Discover effective training techniques, workout structures, and how to maximize your boxing sessions.
+            </p>
+          </div>
+          
+          <div class="bg-elegant-card-primary p-5 rounded-lg">
+            <h3 class="text-xl font-semibold mb-2 flex items-center">
+              <i class="fas fa-question-circle mr-3 text-green-500"></i>
+              How-To Guides
+            </h3>
+            <p class="text-elegant-text-tertiary">
+              Learn how to get the most out of Boxing Timer Champ with detailed tutorials and usage guides.
+            </p>
+          </div>
+          
+          <div class="bg-elegant-card-primary p-5 rounded-lg">
+            <h3 class="text-xl font-semibold mb-2 flex items-center">
+              <i class="fas fa-history mr-3 text-green-500"></i>
+              Boxing Insights
+            </h3>
+            <p class="text-elegant-text-tertiary">
+              Occasional articles on boxing history, training evolution, and the science behind effective workouts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <div class="bg-gradient-to-r from-applegreen-gradientFrom to-applegreen-gradientTo rounded-xl p-8 text-center">
+      <h2 class="text-2xl font-bold mb-4">Get Boxing Timer Champ</h2>
+      <a href="https://apps.apple.com/us/app/boxing-timer-champ/id6744783909" target="_blank" rel="noopener noreferrer" class="inline-block bg-elegant-primary hover:bg-elegant-secondary text-white font-bold py-3 px-6 rounded-lg transition-colors">
+        Download on the App Store
+      </a>
     </div>
   </div>
 

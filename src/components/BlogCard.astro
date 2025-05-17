@@ -32,11 +32,13 @@ const formattedDate = publishDate
 <article class={`bg-elegant-card-primary rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-[1.01] hover:shadow-xl ${compact ? 'h-full flex flex-col' : ''}`}>
   {heroImage && (
     <a href={url} class="block">
-      <div class="relative pb-[56.25%] w-full overflow-hidden">
+      <div class="relative pb-[56.25%] w-full overflow-hidden rounded-t-lg">
         <img 
           src={heroImage} 
           alt={alt || `Featured image for ${title}`}
-          class="absolute inset-0 w-full h-full object-cover"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
           loading="lazy"
         />
       </div>
