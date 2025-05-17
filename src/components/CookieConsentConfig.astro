@@ -1,0 +1,84 @@
+---
+// This component configures cookie consent and manages GTM integration
+---
+
+<script is:inline define:vars={{ gtmId: 'GTM-TX83T7D9' }}>
+// Initialize dataLayer with consent properties
+window.dataLayer = window.dataLayer || [];
+
+// Set default consent state - default to denied for analytics and marketing
+// This follows GDPR requirements for opt-in consent
+window.dataLayer.push({
+  'event': 'default_consent',
+  'consent_state': {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'functionality_storage': 'granted', // Basic functionality cookies are usually allowed
+    'security_storage': 'granted',      // Security cookies are usually allowed
+    'personalization_storage': 'denied',
+    'consent_updated': false
+  }
+});
+
+// Function to update consent in GTM when user makes choices
+function updateConsentState(cookieConsent) {
+  try {
+    // Default to denied
+    let consentUpdate = {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'functionality_storage': 'granted',
+      'security_storage': 'granted',
+      'personalization_storage': 'denied'
+    };
+
+    // Analytics consent
+    if (cookieConsent.analytics) {
+      consentUpdate.analytics_storage = 'granted';
+    }
+
+    // Marketing/Advertising consent
+    if (cookieConsent.marketing) {
+      consentUpdate.ad_storage = 'granted';
+      consentUpdate.ad_user_data = 'granted';
+      consentUpdate.ad_personalization = 'granted';
+    }
+
+    // Personalization consent
+    if (cookieConsent.preferences) {
+      consentUpdate.personalization_storage = 'granted';
+    }
+
+    // Push the consent update to dataLayer
+    window.dataLayer.push({
+      'event': 'consent_update',
+      'consent_state': consentUpdate,
+      'consent_updated': true
+    });
+
+    console.log('Consent updated in GTM:', consentUpdate);
+  } catch (error) {
+    console.error('Error updating consent:', error);
+  }
+}
+
+// CookieYes callback functions
+window.addEventListener('load', function() {
+  // Initialize listeners once CookieYes is ready
+  if (typeof CookieYes !== 'undefined') {
+    // Listen for consent acceptance
+    document.addEventListener("cookieyes_consent_update", function(e) {
+      updateConsentState(e.detail);
+    });
+
+    // Check if consent was already given in a previous session
+    document.addEventListener("cookieyes_consent_state", function(e) {
+      updateConsentState(e.detail);
+    });
+  }
+});
+</script>

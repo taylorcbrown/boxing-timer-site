@@ -2,6 +2,7 @@
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CookieConsentConfig from '../components/CookieConsentConfig.astro';
 import '../styles/scss/main.scss';
 
 const { title, description = "Boxing Timer Champ - The best boxing round timer for serious training. Customize your workout with adjustable rounds, rest periods, and alerts.", breadcrumbs, showBreadcrumbs = true } = Astro.props;
@@ -16,14 +17,15 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content={description} />
 		<title>{title}</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="/favicon.png" />
     <script type="application/ld+json">
       {JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Organization',
         name: 'Boxing Timer Champ',
-        url: Astro.site?.origin || 'https://boxingtimerchamp.com',
-        logo: Astro.site?.origin ? `${Astro.site.origin}/favicon.png` : undefined,
+        url: 'https://boxingtimerchamp.com',
+        logo: 'https://boxingtimerchamp.com/favicon.png',
         sameAs: [
           'https://boxingtimerchamp.com',
           'https://apps.apple.com/us/app/boxing-timer-champ/id6744783909'
@@ -62,10 +64,10 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         name: 'Boxing Timer Champ',
-        url: Astro.site?.origin || 'https://boxingtimerchamp.com',
+        url: 'https://boxingtimerchamp.com',
         potentialAction: {
           '@type': 'SearchAction',
-          target: `${Astro.site?.origin || 'https://boxingtimerchamp.com'}/search?q={search_term_string}`,
+          target: 'https://boxingtimerchamp.com/search?q={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
       })}
@@ -74,8 +76,12 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 		
-		<!-- Google Tag Manager -->
-		<script>
+		<!-- Google Tag Manager with Consent Mode -->
+		<script is:inline>
+		  // Initialize dataLayer
+		  window.dataLayer = window.dataLayer || [];
+		  
+		  // GTM with Consent Mode (follows Google's recommended implementation)
 		  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 		  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -84,10 +90,25 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
 		</script>
 		<!-- End Google Tag Manager -->
 		
-		<!-- CookieYes Banner - Only on production -->
+		<!-- CookieYes Banner with advanced configuration - Only on production -->
 		{!isLocalhost && (
+			<script is:inline>
+				// CookieYes configuration
+				window.cookieyes = window.cookieyes || {};
+				window.cookieyes.settings = {
+					// Configure which cookies require explicit consent
+					'consentBanner': {
+						'show_on_load': true,
+						'auto_accept': false,
+						'default_consent': 'none' // Default to opt-in for GDPR compliance
+					}
+				};
+			</script>
 			<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/746be0fcd3798bc5bf52a785/script.js"></script>
 		)}
+		
+		<!-- Include Cookie Consent Configuration -->
+		<CookieConsentConfig />
 	</head>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
