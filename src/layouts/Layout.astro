@@ -6,12 +6,22 @@ import CookieConsentConfig from '../components/CookieConsentConfig.astro';
 import { formatTitle } from '../utils/seo';
 import '../styles/scss/main.scss';
 
-const { title, description = "Boxing Timer Champ - The best boxing round timer for serious training. Customize your workout with adjustable rounds, rest periods, and alerts.", breadcrumbs, showBreadcrumbs = true } = Astro.props;
+const { 
+  title, 
+  description = "The best boxing round timer for serious training. Customize your workout with adjustable rounds, rest periods, and alerts.", 
+  breadcrumbs, 
+  showBreadcrumbs = true,
+  seo = {}
+} = Astro.props;
+
 const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
 const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html';
 
 // Format the title with site name consistently
-const formattedTitle = formatTitle(title, { isHomepage });
+const formattedTitle = formatTitle(title, { 
+  isHomepage,
+  ...seo
+});
 ---
 
 <!doctype html>
