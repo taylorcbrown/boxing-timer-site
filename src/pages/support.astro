@@ -44,70 +44,82 @@ import AccordionItem from '../components/AccordionItem.astro';
         <h2 class="text-3xl font-bold text-green-500 mb-6">Frequently Asked Questions</h2>
         
         <Accordion>
-          <AccordionItem title="How do I set up custom round times?">
-            <p class="text-elegant-text-secondary mb-3">
-              To set up custom round times in Boxing Timer Champ:
+          <AccordionItem title="How do I create a new preset?">
+            <ol class="list-decimal ml-6 space-y-2 text-elegant-text-secondary">
+              <li>Open the app and tap on the preset name, such as "3 Rounds".</li>
+              <li>Select "New Preset" at the bottom.</li>
+              <li>Name the preset. By devault, it's named "My Preset", but you can name it anything you like.</li>
+              <li>Adjust the settings to your liking.</li>
+              <li>Tap "Save" at the top-right.</li>
+            </ol>
+            <p class="text-elegant-text-secondary">
+              You can now use this preset in the future by tapping on it in the list of presets. Order it by dragging it up or down in the presets menu.
+            </p>
+          </AccordionItem>
+
+          <AccordionItem title="How do I set warning sounds?">
+            <p class="text-elegant-text-secondary">
+              The app features warning sounds for when a round or rest phase is about to end. To enable:
             </p>
             <ol class="list-decimal ml-6 space-y-2 text-elegant-text-secondary">
-              <li>Open the app and tap on the "Settings" icon in the main screen</li>
-              <li>Select "Timer Settings" from the menu</li>
-              <li>Tap "Round Length" and adjust to your desired time</li>
-              <li>Tap "Rest Period" to set your rest time between rounds</li>
-              <li>Use the "Save" button to create a preset for future use</li>
+              <li>Tap the Settings cog at the top.</li>
+              <li>Select your desired times for the "Round Ending" and "Rest Ending" options.</li>
+              <li>Adjust the settings to your liking.</li>
             </ol>
-          </AccordionItem>
-          
-          <AccordionItem title="Does the app work in the background?">
             <p class="text-elegant-text-secondary">
-              Yes! Boxing Timer Champ is designed to work in the background. You'll continue to hear audio alerts even when using other apps or when your phone is locked. For optimal performance, make sure that:
+              Each warning has its own distinct sound to ensure your mind is in the right place at the right time.
             </p>
-            <ul class="list-disc ml-6 mt-3 space-y-2 text-elegant-text-secondary">
-              <li>Your device's sound is turned on</li>
-              <li>Battery optimization is disabled for the app</li>
-              <li>Background app refresh is enabled in your iOS settings</li>
-            </ul>
           </AccordionItem>
           
-          <AccordionItem title="How do I restore my Premium subscription?">
+          <AccordionItem title="How do I restore my paid settings?">
             <p class="text-elegant-text-secondary">
-              If you've previously purchased a Premium subscription and need to restore it:
+              If you upgraded to the Ad-Free or Premium versions of the app and need to restore access, follow these steps:
             </p>
             <ol class="list-decimal ml-6 mt-3 space-y-2 text-elegant-text-secondary">
-              <li>Open the app and go to the Premium subscription page</li>
-              <li>Tap the "Restore Purchases" button at the bottom of the screen</li>
-              <li>Sign in with the same Apple ID that was used for the original purchase</li>
-              <li>Your subscription will be restored automatically if it's still valid</li>
+              <li>Open the app and go to the Settings cog at the top.</li>
+              <li>Tap on "Restore Purchases" toward the bottom.</li>
+              <li>Sign in with the same Apple ID that was used for the original purchase.</li>
+              <li>Your subscription should be restored automatically if it's still valid.</li>
             </ol>
-            <p class="text-elegant-text-secondary mt-3">
-              If you're still experiencing issues after following these steps, please contact our support team with your purchase receipt.
-            </p>
           </AccordionItem>
           
-          <AccordionItem title="What's the difference between the free and Premium versions?">
+          <AccordionItem title="What are the different versions of Boxing Timer Champ?">
             <p class="text-elegant-text-secondary mb-3">
-              Boxing Timer Champ offers two versions:
+              Boxing Timer Champ offers three versions to suit different needs:
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
               <div class="bg-elegant-card-primary p-4 rounded-lg">
                 <h4 class="text-lg font-semibold mb-2">Free Version</h4>
+                <p class="text-elegant-text-secondary font-bold mb-2">Free</p>
                 <ul class="list-disc ml-6 space-y-1 text-elegant-text-secondary">
-                  <li>Basic round timer functionality</li>
-                  <li>Standard audio alerts</li>
-                  <li>Limited round presets</li>
-                  <li>Ad-supported experience</li>
+                  <li>Complete timer functionality</li>
+                  <li>Custom presets</li>
+                  <li>Warning alerts</li>
+                  <li>Privacy-focused ads during rest phases only</li>
+                  <li>No personal data tracking</li>
+                </ul>
+              </div>
+              
+              <div class="bg-gradient-to-br from-elegant-card-secondary to-elegant-card-primary border border-elegant-border p-4 rounded-lg shadow-lg">
+                <h4 class="text-lg font-semibold mb-2">Ad-Free Version</h4>
+                <p class="text-elegant-text-secondary font-bold mb-2">$4.99 one-time purchase</p>
+                <ul class="list-disc ml-6 space-y-1 text-elegant-text-secondary">
+                  <li>All features from Free version</li>
+                  <li>No ads during rest phases</li>
+                  <li>Distraction-free training</li>
                 </ul>
               </div>
               
               <div class="bg-gradient-to-r from-applegreen-gradientFrom to-applegreen-gradientTo p-4 rounded-lg">
-                <h4 class="text-lg font-semibold mb-2">Premium Version ($4.99)</h4>
+                <h4 class="text-lg font-semibold mb-2">Premium Version</h4>
+                <p class="text-white font-bold mb-2">$9.99 one-time purchase</p>
                 <ul class="list-disc ml-6 space-y-1 text-white">
-                  <li>Ad-free experience</li>
-                  <li>Unlimited custom presets</li>
-                  <li>Enhanced sound options</li>
-                  <li>Session logging and statistics</li>
-                  <li>Dark mode UI</li>
-                  <li>Background mode</li>
+                  <li>All features from Ad-Free version</li>
+                  <li>Session history and logging</li>
+                  <li>Training statistics</li>
+                  <li>Future premium features</li>
                 </ul>
+                <p class="text-white text-sm mt-3 italic">$4.99 upgrade from Ad-Free version</p>
               </div>
             </div>
           </AccordionItem>
@@ -124,7 +136,7 @@ import AccordionItem from '../components/AccordionItem.astro';
               <li>Any workout that requires timed intervals</li>
             </ul>
             <p class="text-elegant-text-secondary mt-3">
-              The flexible timer settings allow you to adapt to virtually any training protocol.
+              The flexible timer settings allow you to adapt to virtually any training plan.
             </p>
           </AccordionItem>
         </Accordion>
@@ -142,50 +154,18 @@ import AccordionItem from '../components/AccordionItem.astro';
               <div>
                 <h4 class="font-semibold mb-2">Check your device settings:</h4>
                 <ul class="list-disc ml-6 space-y-2">
-                  <li>Make sure your device is not on silent/mute mode</li>
-                  <li>Check that your volume is turned up</li>
-                  <li>Verify that you haven't disabled notifications for the app</li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 class="font-semibold mb-2">Check app settings:</h4>
-                <ul class="list-disc ml-6 space-y-2">
-                  <li>Open the app settings and ensure sound alerts are enabled</li>
-                  <li>Try selecting a different sound option in the alert settings</li>
+                  <li>Ensure you have sound turned on from the Settings menu.</li>
+                  <li>Make sure your device is not on silent/mute mode.</li>
+                  <li>Check that your volume is turned up.</li>
                 </ul>
               </div>
               
               <div>
                 <h4 class="font-semibold mb-2">Restart and update:</h4>
                 <ul class="list-disc ml-6 space-y-2">
-                  <li>Close and restart the app</li>
-                  <li>Check if your app is updated to the latest version</li>
-                  <li>Restart your device</li>
-                </ul>
-              </div>
-            </div>
-          </AccordionItem>
-          
-          <AccordionItem title="The timer stops when my phone screen is locked">
-            <div class="space-y-4 text-elegant-text-secondary">
-              <p>To ensure Boxing Timer Champ continues to work with your screen locked:</p>
-              
-              <div>
-                <h4 class="font-semibold mb-2">Update your settings:</h4>
-                <ol class="list-decimal ml-6 space-y-2">
-                  <li>Go to your iOS Settings > Battery</li>
-                  <li>Disable Low Power Mode if it's enabled</li>
-                  <li>Go to Settings > General > Background App Refresh</li>
-                  <li>Make sure Background App Refresh is enabled for Boxing Timer Champ</li>
-                </ol>
-              </div>
-              
-              <div>
-                <h4 class="font-semibold mb-2">For Premium users:</h4>
-                <ul class="list-disc ml-6 space-y-2">
-                  <li>Enable "Background Mode" in the app settings</li>
-                  <li>This feature is only available in the Premium version</li>
+                  <li>Close and restart the app.</li>
+                  <li>Check if your app is updated to the latest version.</li>
+                  <li>Update and restart your device if possible.</li>
                 </ul>
               </div>
             </div>
@@ -196,14 +176,14 @@ import AccordionItem from '../components/AccordionItem.astro';
               <p>If the app is crashing or freezing, try these troubleshooting steps:</p>
               
               <ol class="list-decimal ml-6 space-y-2">
-                <li>Force close the app and restart it</li>
-                <li>Update to the latest version from the App Store</li>
-                <li>Restart your device</li>
-                <li>Check that you have sufficient storage space on your device</li>
-                <li>If problems persist, try uninstalling and reinstalling the app (Premium users should first ensure their Apple ID is noted to restore purchases)</li>
+                <li>Force close the app and restart it.</li>
+                <li>Update to the latest version from the App Store.</li>
+                <li>Restart your device.</li>
+                <li>Check that you have sufficient storage space on your device.</li>
+                <li>If problems persist, try uninstalling and reinstalling the app.</li>
               </ol>
               
-              <p class="mt-3">If none of these solutions work, please contact our support team with details about your device model and iOS version.</p>
+              <p class="mt-3">If none of these work, please contact support with details about your device model and iOS version.</p>
             </div>
           </AccordionItem>
         </Accordion>
@@ -239,7 +219,7 @@ import AccordionItem from '../components/AccordionItem.astro';
           <div class="bg-elegant-card-primary rounded-lg p-6 border border-elegant-border-primary">
             <h3 class="text-xl font-semibold mb-4">Need More Help?</h3>
             <p class="text-elegant-text-secondary mb-4">
-              If you couldn't find the answer to your question, our support team is ready to help.
+              If you couldn't find the answer to your question, support is ready to help.
             </p>
             <div class="space-y-4">
               <a href="/contact" class="flex items-center text-green-500 hover:text-green-400">

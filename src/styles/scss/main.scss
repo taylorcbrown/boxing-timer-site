@@ -1,15 +1,10 @@
+@use './base/_reset';
+@use './base/_typography';
+@use 'tailwind' as *;
+
 /**
  * Boxing Timer Champ - Main Stylesheet
  */
-
-// Import base styles first (no dependencies)
-@use './base/_reset';
-@use './base/_typography';
-
-// Tailwind Directives
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 // Brand Colors - Define here to avoid import issues
 $brand-primary: #30d158;
