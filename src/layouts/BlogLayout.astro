@@ -1,26 +1,30 @@
 ---
 import Layout from './Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import type { BlogFrontmatter } from '../content/blog-schema';
 
 export interface Props {
-  title: string;
-  description: string;
-  publishDate: string;
+  frontmatter?: BlogFrontmatter;
+  title?: string;
+  description?: string;
+  publishDate?: string;
   updatedDate?: string;
   author?: string;
   heroImage?: string;
   alt?: string;
 }
 
-const { 
-  title, 
-  description, 
-  publishDate, 
-  updatedDate, 
-  author = "Boxing Timer Champ Team",
-  heroImage,
-  alt
-} = Astro.props;
+const props = Astro.props;
+const fm = props.frontmatter || {} as Partial<BlogFrontmatter>;
+
+// Use frontmatter or direct props with fallbacks
+const title = fm.title || props.title || '';
+const description = fm.description || props.description || '';
+const publishDate = fm.publishDate || props.publishDate || new Date().toISOString();
+const updatedDate = fm.updatedDate || props.updatedDate;
+const author = fm.author || props.author || "Boxing Timer Champ Team";
+const heroImage = fm.heroImage || props.heroImage;
+const alt = fm.alt || props.alt;
 
 const formattedPublishDate = new Date(publishDate).toLocaleDateString('en-US', {
   year: 'numeric',
@@ -42,30 +46,34 @@ const formattedUpdatedDate = updatedDate
   description={description}
   breadcrumbs={[{ label: 'Blog', href: '/blog' }, { label: title, href: Astro.url.pathname }]}
 >
-  <article class="max-w-4xl mx-auto px-4 py-8">
-    <div class="mb-8">
-      {heroImage && (
-        <div class="mb-6 rounded-lg overflow-hidden shadow-lg">
-          <div class="relative pb-[56.25%] w-full overflow-hidden">
-            <img 
-              src={heroImage} 
-              alt={alt || `Featured image for ${title}`} 
-              class="absolute inset-0 w-full h-full object-cover object-center"
-              width="1600"
-              height="900"
-              loading="eager"
-            />
-          </div>
+  <div class="max-w-6xl mx-auto px-4">
+    {/* Full-width hero image */}
+    {heroImage && (
+      <div class="mb-8 rounded-lg overflow-hidden shadow-lg">
+        <div class="relative pb-[56.25%] w-full overflow-hidden">
+          <img 
+            src={heroImage} 
+            alt={alt || `Featured image for ${title}`} 
+            class="absolute inset-0 w-full h-full object-cover object-center"
+            width="1600"
+            height="900"
+            loading="eager"
+          />
         </div>
-      )}
-      
-      <h1 class="text-3xl md:text-4xl font-bold mb-4">{title}</h1>
-      
-      <div class="flex flex-wrap items-center text-gray-400 mb-6">
-        <span class="mr-4 flex items-center">
-          <i class="fas fa-calendar-alt mr-2"></i>
-          <time datetime={publishDate}>{formattedPublishDate}</time>
-        </span>
+      </div>
+    )}
+    
+    <article class="max-w-3xl mx-auto py-8">
+      <header class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">{title}</h1>
+        
+        <div class="flex flex-wrap items-center text-gray-400 mb-6">
+          <span class="mr-4 flex items-center">
+            <i class="fas fa-calendar-alt mr-2"></i>
+            <time datetime={publishDate} class="text-sm">
+              {formattedPublishDate}
+            </time>
+          </span>
         
         {formattedUpdatedDate && (
           <span class="mr-4 flex items-center">
@@ -79,12 +87,12 @@ const formattedUpdatedDate = updatedDate
           {author}
         </span>
       </div>
-    </div>
-    
-    <div class="prose prose-invert max-w-none">
-      <slot />
-    </div>
-  </article>
+      </header>
+      
+      <div class="prose prose-invert max-w-none">
+        <slot />
+      </div>
+    </article>
 
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
@@ -112,4 +120,5 @@ const formattedUpdatedDate = updatedDate
     }
   })}>
   </script>
+  </div>
 </Layout>

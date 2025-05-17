@@ -3,11 +3,15 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CookieConsentConfig from '../components/CookieConsentConfig.astro';
+import { formatTitle } from '../utils/seo';
 import '../styles/scss/main.scss';
 
 const { title, description = "Boxing Timer Champ - The best boxing round timer for serious training. Customize your workout with adjustable rounds, rest periods, and alerts.", breadcrumbs, showBreadcrumbs = true } = Astro.props;
 const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
 const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html';
+
+// Format the title with site name consistently
+const formattedTitle = formatTitle(title, { isHomepage });
 ---
 
 <!doctype html>
@@ -16,7 +20,7 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content={description} />
-		<title>{title}</title>
+		<title>{formattedTitle}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" type="image/png" href="/favicon.png" />
     <script type="application/ld+json">
